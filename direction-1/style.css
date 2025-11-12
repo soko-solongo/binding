@@ -10,7 +10,7 @@
 
     --black: #242424;
     --green: #76EAD3;
-    --orange: #FF571A;
+    --orange: #E34309;
     --light-grey: #EEF2F6;
     --dark-grey: #DBE2EA;
     --tab-color: #D1D7DD;
@@ -140,7 +140,19 @@ blockquote p::after {
 .bolded-text {
     font-family: var(--heading-2-font);
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 450;
     padding-block: calc(4*var(--spacing));
-    letter-spacing: -0.03em;
+    text-decoration: underline;
+    text-decoration-color: var(--green);
+    text-decoration-thickness: 0.2em;
+}
+
+.orange-text{
+    font-style: italic;
+    color: var(--orange);
+    font-weight: 500;
+}
+
+.tab {
+    
 }
