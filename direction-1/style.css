@@ -70,7 +70,7 @@ a:hover {
 h1 {
     font-family: var(--heading-1-font);
     font-size: calc(5*var(--spacing));
-    line-height: calc(*var(--spacing));
+    line-height: calc(7*var(--spacing));
     display: inline-block;
     box-shadow: inset 0 -0.5em var(--green);
     letter-spacing: -0.01em;
