@@ -1,0 +1,82 @@
+/* -------- importing fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kode+Mono:wght@400..700&display=swap');
+
+/* -------- setting the CSS variables ---------- */
+:root{
+    --spacing: 1.5rem;
+    --heading-1-font: "Kode Mono", serif;
+    --heading-2-font: "DM Mono", sans-serif;
+    --body-font: "DM Sans", sans-serif;
+
+    --black: #242424;
+    --green: #76EAD3;
+    --orange: #FF571A;
+    --light-grey: #EEF2F6;
+    --dark-grey: #DBE2EA;
+    --tab-color: #D1D7DD;
+
+    background: var(--light-grey);
+}
+
+html{scroll-behavior: smooth;}
+
+/* -------- main layout and colors ---------- */
+
+/* ---- nav and footer ---- */
+nav, footer {
+    padding: 5%;
+    background: var(--black);
+    color: var(--light-grey);
+    text-transform: uppercase;
+    font-family: "DM Mono";
+}
+
+nav ol{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    padding-block-start: 5%;
+    flex-wrap: wrap;
+}
+
+header {
+    background: var(--dark-grey);
+    padding-inline: 5%;
+    padding-block: 20%;
+}
+
+/* ---- headers, paragraph, and blockquote ---- */
+h1 {
+    font-family: var(--heading-1-font);
+    font-size: calc(2.2*var(--spacing));
+    line-height: calc(*var(--spacing));
+    display: inline-block;
+    box-shadow: inset 0 -0.6em var(--green);
+}
+
+h2 {
+    font-family: var(--heading-2-font);
+    text-transform: uppercase;
+    font-size: calc(1.1*var(--spacing));
+    background: var(--green);
+    padding-inline: 5%;
+    padding-block: 0.25em;
+    border-block: solid var(--black) 0.05em;
+}
+
+p{
+    font-family: var(--body-font);
+    line-height: calc(1.2*var(--spacing));
+    padding-inline: 5%;
+    padding-block-start: calc(2*var(--spacing));
+}
+
+nav p{
+    padding-inline: initial;
+}
+
+header p{
+    padding-inline: initial;
+    padding-block-start: initial;
+    padding-block-end: calc(1.35*var(--spacing));
+}
