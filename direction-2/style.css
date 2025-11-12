@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+/* -------- setting the CSS variables ---------- */
 :root{
-    background: blue;
+    --spacing: 1.5rem;
+    --heading-font: "Instramental Serif", serif;
+    --body-font: "Georgia", serif;
+
+    --black: #242424;
+    --purple: #B559FF;
+    --orange: #FF723E;
+    --light-cream: #FFF9F3;
+    --dark-cream: #A4917E;
+
+    background: var(--light-cream);
+}
+
+html{scroll-behavior: smooth;}
+
+p {
+    font-family: var(--body-font);
+    font-size: calc(0.6*var(--spacing));
+    line-height: var(--spacing);
 }

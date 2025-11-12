@@ -16,6 +16,7 @@
     --tab-color: #D1D7DD;
 
     background: var(--light-grey);
+    /* font-size: 50%; */
 }
 
 html{scroll-behavior: smooth;}
@@ -25,7 +26,8 @@ html{scroll-behavior: smooth;}
 /* ---- nav and footer ---- */
 nav, 
 footer {
-    padding: 5%;
+    padding-inline: 5%;
+    padding-block: var(--spacing);
     background: var(--black);
     color: var(--light-grey);
     text-transform: uppercase;
@@ -39,14 +41,14 @@ nav ol,
 nav p{
     display: flex;
     flex-direction: row;
-    gap: 10%;
+    gap: var(--spacing);
     padding-block-start: var(--spacing);
     flex-wrap: wrap;
     font-family: var(--heading-2-font);
 }
 
 footer p {
-    font-family: var(--heading-2-font);
+    font-size: calc(0.8*var(--spacing));
 }
 
 a {
@@ -58,7 +60,7 @@ a {
     transition: color 0.3s ease-in-out;
     font-family: var(--heading-2-font);
     text-transform: uppercase;
-    margin-inline: 10%;
+    /* margin-inline: var(--spacing); */
 }
 
 a:hover {
@@ -69,8 +71,8 @@ a:hover {
 /* ---- headers, paragraph, and blockquote ---- */
 h1 {
     font-family: var(--heading-1-font);
-    font-size: calc(5*var(--spacing));
-    line-height: calc(7*var(--spacing));
+    font-size: calc(2.75*var(--spacing));
+    line-height: calc(3.5*var(--spacing));
     display: inline-block;
     box-shadow: inset 0 -0.5em var(--green);
     letter-spacing: -0.01em;
@@ -80,7 +82,7 @@ h2 {
     font-family: var(--heading-2-font);
     font-weight: 500;
     text-transform: uppercase;
-    font-size: calc(2.5*var(--spacing));
+    font-size: calc(1.2*var(--spacing));
     background: var(--green);
     padding-inline: 4%;
     padding-block: 0.25em;
@@ -98,10 +100,10 @@ h2 {
     
     p {
         font-family: var(--body-font);
-        font-size: calc(1.8*var(--spacing));
-        line-height: calc(3.2*var(--spacing));
+        font-size: calc(0.8*var(--spacing));
+        line-height: calc(1.4*var(--spacing));
         padding-inline: 4%;
-        padding-block-start: calc(3*var(--spacing));
+        padding-block-start: var(--spacing);
         max-inline-size: 60ch;
     }
     
@@ -111,8 +113,8 @@ h2 {
     .window-container p{
         padding-inline: initial;
         font-family: var(--heading-2-font);
-        font-size: calc(1.8*var(--spacing));
-        line-height: calc(3.2*var(--spacing));
+        font-size: calc(0.9*var(--spacing));
+        line-height: calc(1.5*var(--spacing));
     }
     
     nav p{
@@ -121,21 +123,21 @@ h2 {
     
     blockquote{
         background: var(--dark-grey);
-        padding-block: calc(3*var(--spacing));
-        padding-inline: calc(3*var(--spacing));
-        margin-block: calc(4*var(--spacing));
-        margin-inline-start: calc(3*var(--spacing));
-        border-inline-start: solid var(--green) var(--spacing);
+        padding-block: calc(2*var(--spacing));
+        padding-inline: calc(2*var(--spacing));
+        margin-block: calc(3*var(--spacing));
+        margin-inline-start: calc(1.6*var(--spacing));
+        border-inline-start: solid var(--green) calc(0.7*var(--spacing));
     }
     
     blockquote li {
         font-family: var(--heading-2-font);
         font-weight: 400;
-        font-size: calc(1.75*var(--spacing));
+        font-size: calc(0.9*var(--spacing));
         letter-spacing: -0.05em;
-        line-height: calc(3.2*var(--spacing));
-        padding-block-start: calc(2*var(--spacing));
-        max-inline-size: 60ch;  
+        line-height: calc(1.4*var(--spacing));
+        padding-block-start: calc(0.5*var(--spacing));
+        max-inline-size: 60ch;
     }
     
     /* ------------------------------------------ !!! Hanging punctuation is not working */
