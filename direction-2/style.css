@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Instrument+Serif:ital@0;1&display=swap');
 /* -------- setting the CSS variables ---------- */
 :root{
     --spacing: 1.5rem;
-    --heading-font: "Instrument Serif", serif;
+    --h1-font: "Instrument Serif", serif;
+    --h2-font: "Chivo Mono", monospace;
     --body-font: "Georgia", serif;
 
     --black: #242424;
     --purple: #d4a0ff;
     --orange: #FF723E;
     --light-cream: #FFF9F3;
-    --dark-cream: #A4917E;
+    --dark-cream: #8a7156;
 
     background: var(--light-cream);
 }
@@ -36,7 +37,6 @@ blockquote {
 header ol{
     display: flex;
     flex-direction: column-reverse;
-    gap: calc(1.5*var(--spacing));
 }
 
 nav,
@@ -87,23 +87,26 @@ blockquote ol{
 
 h1 {
     font-size: calc(3.5*var(--spacing));
-    font-family: var(--heading-font);
+    font-family: var(--h1-font);
     color: var(--orange);
     line-height: calc(4*var(--spacing));
 }
 
 h2{
-    font-size: calc(1.8*var(--spacing));
-    font-family: var(--heading-font);
+    font-family: var(--h2-font);
+    font-size: calc(1.3*var(--spacing));
+    text-transform: uppercase;
+    font-weight: 400;
     color: var(--light-cream);
     margin-block-start: calc(1.5*var(--spacing));
+    margin-block-end: var(--spacing);
 }
 
 
 .h2-background {
     background: var(--dark-cream);
     padding-block: calc(0.3*var(--spacing));
-    border-radius: 0 0 calc(2.5*var(--spacing));
+    border-radius: 0 0 calc(1.5*var(--spacing));
     display: inline-block;
     padding-inline-start: 4%;
     padding-inline-end: 10%;
@@ -159,8 +162,8 @@ h2{
 
 }
 
-nav p, 
-footer p{
+nav p {
+    font-family: var(--h2-font);
     padding-inline: 4%;
     margin-block: initial;
     color: var(--light-cream);
@@ -176,5 +179,23 @@ nav ol{
     color: var(--light-cream);
     font-size: calc(1.5*var(--spacing));
     padding-block: var(--spacing);
+    font-weight: 500;
+}
+
+
+footer ol{
+    display: flex;
+    flex-direction: column;
+    gap: calc(1.5*var(--spacing));
+    background: var(--dark-cream);
+    padding-inline: 4%;
+    padding-block: calc(2*var(--spacing));
+}
+
+footer li{
+    font-size: var(--spacing);
+    color: var(--light-cream);
+    font-size: calc(1*var(--spacing));
+    line-height: calc(1.5*var(--spacing));
     font-weight: 500;
 }
