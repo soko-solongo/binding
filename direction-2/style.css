@@ -3,11 +3,11 @@
 /* -------- setting the CSS variables ---------- */
 :root{
     --spacing: 1.5rem;
-    --heading-font: "Instramental Serif", serif;
+    --heading-font: "Instrument Serif", serif;
     --body-font: "Georgia", serif;
 
     --black: #242424;
-    --purple: #B559FF;
+    --purple: #d4a0ff;
     --orange: #FF723E;
     --light-cream: #FFF9F3;
     --dark-cream: #A4917E;
@@ -17,8 +17,164 @@
 
 html{scroll-behavior: smooth;}
 
-p {
+
+nav,
+.header-container,
+p,
+blockquote {
+    padding-inline: 4%;
+}
+
+.header-container {
+    border-radius: calc(1.7*var(--spacing)) calc(1.7*var(--spacing)) 0 0;
+    background: var(--light-cream);
+    inline-size: -4%;
+    padding-block-end: calc(3*var(--spacing));
+    padding-block-start: calc(5*var(--spacing));
+}
+
+header ol{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: calc(1.5*var(--spacing));
+}
+
+nav,
+header{
+    background: var(--dark-cream);
+}
+
+p,
+blockquote {
     font-family: var(--body-font);
-    font-size: calc(0.6*var(--spacing));
-    line-height: var(--spacing);
+    font-size: calc(0.8*var(--spacing));
+    line-height: calc(1.5*var(--spacing));
+}
+
+p{
+    margin-block: calc(2*var(--spacing));
+}
+
+
+p:first-child {
+    padding-inline-start: initial;
+}
+
+
+blockquote{
+    background: var(--dark-grey);
+    padding-block: calc(1.2*var(--spacing));
+    padding-inline: calc(1*var(--spacing));
+    margin-block: calc(2*var(--spacing));
+    margin-inline: 4%;
+    border: solid var(--orange) calc(0.1*var(--spacing));
+    border-radius: 0 0 calc(4*var(--spacing)) 0;
+}
+
+blockquote li {
+    font-weight: 400;
+    font-size: calc(1*var(--spacing));
+    line-height: calc(1.8*var(--spacing));
+    max-inline-size: 60ch;
+    font-style: italic;
+}
+
+blockquote ol{
+    display: flex;
+    flex-direction: column;
+    gap: calc(2*var(--spacing));
+}
+
+h1 {
+    font-size: calc(3.5*var(--spacing));
+    font-family: var(--heading-font);
+    color: var(--orange);
+    line-height: calc(4*var(--spacing));
+}
+
+h2{
+    font-size: calc(1.8*var(--spacing));
+    font-family: var(--heading-font);
+    color: var(--light-cream);
+    margin-block-start: calc(1.5*var(--spacing));
+}
+
+
+.h2-background {
+    background: var(--dark-cream);
+    padding-block: calc(0.3*var(--spacing));
+    border-radius: 0 0 calc(2.5*var(--spacing));
+    display: inline-block;
+    padding-inline-start: 4%;
+    padding-inline-end: 10%;
+}
+
+.card-1,
+.card-2,
+.card-3,
+.card-4 {
+    margin-inline: 4%;
+    margin-block: 0;
+    inline-size: 90%;
+    padding-inline: calc(1.2*var(--spacing));
+    padding-block: calc(0.1*var(--spacing));
+}
+
+.card-1{
+    background: #98eaba;
+    rotate: 4deg;
+}
+
+.card-2{
+    background: #ea98cc;
+    rotate: -4deg;
+}
+
+.card-3{
+    background: #98d4ea;
+    rotate: 4deg;
+}
+
+.card-4{
+    background: #ead798;
+    rotate: -4deg;
+}
+
+.highlight{
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--purple);
+    text-decoration-thickness: 0.15em;
+    text-underline-offset: 0.15em;
+    font-style: italic;
+}
+
+.bolded-text{
+    font-size: calc(1.1*var(--spacing));
+    line-height: calc(1.8*var(--spacing));
+    padding-inline: var(--spacing);
+    margin-block: var(--spacing);
+    margin-inline-start: 4%;
+    border-inline-start: solid 0.3em var(--purple);
+
+}
+
+nav p, 
+footer p{
+    padding-inline: 4%;
+    margin-block: initial;
+    color: var(--light-cream);
+    font-size: calc(1.5*var(--spacing));
+    padding-block-start: var(--spacing);
+    font-weight: 500;
+}
+
+nav ol{
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing);
+    color: var(--light-cream);
+    font-size: calc(1.5*var(--spacing));
+    padding-block: var(--spacing);
+    font-weight: 500;
 }

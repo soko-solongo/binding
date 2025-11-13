@@ -206,9 +206,9 @@ h2 {
                 padding-block: calc(1.5*var(--spacing));
             }
 
-            .window-container p: :nth-child(1){
-                padding-inline: initial;
-            }
+            /* .window-container p:first-child{
+                padding-inline-start: initial;
+            } */
 
             /* .window-container::after {
                 content: '';
