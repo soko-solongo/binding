@@ -199,3 +199,19 @@ footer li{
     line-height: calc(1.5*var(--spacing));
     font-weight: 500;
 }
+
+a {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: var(--black);
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.15em;
+    transition: color 0.3s ease-in-out;
+    font-family: var(--h2-font);
+    text-transform: uppercase;
+    margin-inline: 4%;
+}
+
+a:hover {
+    background: var(--orange);
+}
