@@ -23,7 +23,7 @@ blockquote {
 
 header ol {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: end;
 }
 
@@ -54,11 +54,17 @@ h2{
     font-weight: 300;
     color: var(--white);
     font-size: calc(1.3*var(--spacing));
-    background: var(--black);
     padding-block: calc(0.2*var(--spacing));
     padding-inline: calc(0.6*var(--spacing));
-    margin-inline-start: calc(1*var(--spacing));
+    /* margin-inline-start: calc(1*var(--spacing)); */
     align-items: end;
+    text-align: right;
+}
+
+.h2-background {
+    background: var(--black);
+    padding-block: calc(0.3*var(--spacing));
+    display: inline-block;
 }
 
 blockquote{
@@ -66,5 +72,10 @@ blockquote{
     color: var(--black);
     line-height: calc(1.3*var(--spacing));
     font-size: calc(0.9*var(--spacing));
+}
+
+.section{
+    align-items: end;
+    text-align: right;
 }
 
