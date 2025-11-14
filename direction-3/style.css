@@ -279,14 +279,14 @@ blockquote::after{
 }
 
 a{
-    text-decoration: underline;
-    text-decoration-style: solid;
+    /* text-decoration: underline;
+    text-decoration-style: solid; */
     text-decoration-thickness: 0.1em;
     text-underline-offset: 0.15em;
     transition: color 0.3s ease-in-out;
     text-transform: uppercase;
 }
 
-a:hover {
+/* a:hover {
     background: var(--yellow);
-}
+} */
