@@ -188,6 +188,7 @@ nav p {
 nav ol{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: var(--spacing);
     color: var(--light-cream);
     font-size: calc(1.5*var(--spacing));
@@ -195,11 +196,14 @@ nav ol{
     font-weight: 500;
 }
 
+footer{
+    margin-block-start: calc(8*var(--spacing));
+}
 
 footer ol{
     display: flex;
     flex-direction: column;
-    gap: calc(1.5*var(--spacing));
+    gap: calc(2.5*var(--spacing));
     background: var(--dark-cream);
     padding-inline: 4%;
     padding-block: calc(2*var(--spacing));
@@ -213,17 +217,14 @@ footer li{
 }
 
 a {
-    text-decoration: underline;
     text-decoration-style: solid;
-    text-decoration-color: var(--black);
     text-decoration-thickness: 0.1em;
     text-underline-offset: 0.15em;
     transition: color 0.3s ease-in-out;
-    font-family: var(--h2-font);
-    text-transform: uppercase;
+    font-family: var(--body-font);
     margin-inline: 4%;
 }
 
-a:hover {
+/* a:hover {
     background: var(--orange);
-}
+} */

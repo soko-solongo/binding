@@ -47,8 +47,16 @@ nav p{
     font-family: var(--heading-2-font);
 }
 
+nav li:first-child{
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+}
+
 footer p {
     font-size: calc(0.8*var(--spacing));
+    font-family: var(--heading-2-font);
+    padding-inline: initial;
+    padding-block-end: var(--spacing);
 }
 
 a {
@@ -63,12 +71,6 @@ a {
     /* margin-inline: var(--spacing); */
 }
 
-a:hover {
-    background: var(--green);
-}
-
-
-/* ---- headers, paragraph, and blockquote ---- */
 h1 {
     font-family: var(--heading-1-font);
     font-size: calc(2*var(--spacing));
