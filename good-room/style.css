@@ -14,7 +14,10 @@ h3{
     text-decoration-color: var(--orange);
 }
 
-/* 
-.blockquote{
-    DESIGN ME
-} */
+blockquote::before {
+    color: var(--orange);
+}
+
+blockquote::after {
+    background: var(--orange);
+}
