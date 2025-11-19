@@ -175,7 +175,7 @@ blockquote::after{
     margin-inline: 4%;
     margin-block: calc(2*var(--spacing));
     inline-size: 90%;
-    box-shadow: 0.6em 0.6em 0 var(--black);
+    box-shadow: 0.6em -0.6em 0 var(--black);
     /* filter: drop-shadow(5px 5px var(--black)); */
 
 }
@@ -192,47 +192,58 @@ blockquote::after{
 .folded-container {
     position: relative;
     margin-inline: 4%;
-    margin-block: var(--spacing);
+    margin-block-end: var(--spacing);
+    margin-block-start: calc(3*var(--spacing));
     background: var(--dark-grey);
     border: var(--border) solid var(--black);
-    
-    /* padding-inline-start: 8%;
-    margin-inline: 4%;
-    padding-block-start: calc(2.4*var(--spacing)); */
-    /* margin-block-start: calc(2*var(--spacing)); */
+    corner-shape: bevel;
+    border-radius: 0 calc(4*var(--spacing)) 0 0;
+    box-shadow: 0.6em -0.6em var(--black);
+    max-inline-size: calc(20*var(--spacing));
 }
 
 .folded-container p{
     font-family: var(--heading-font);
-    font-size: calc(0.8*var(--spacing));
+    font-size: calc(0.9*var(--spacing));
     line-height: calc(1.4*var(--spacing));
-    max-inline-size: 60ch;
+    padding-inline: calc(1.2*var(--spacing));
+    padding-block-end: calc(1.4*var(--spacing));
+    padding-block-start: calc(5*var(--spacing));
+    text-transform: uppercase;
 }
 
-/* --- The Folded Corner Effect (::before) --- */
-/* .folded-container::before {
+/* --- this is folded corner --- */
+.folded-container::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
+    top: calc(0.8*var(--spacing));
+    right: calc(0.8*var(--spacing));
+    inline-size: calc(3.2*var(--spacing));
+    block-size: calc(3.2*var(--spacing));
     
+    /* drawing the L-shaped line using borders */
+    border-left: calc(2*var(--border)) solid var(--black);
+    border-bottom: calc(2*var(--border)) solid var(--black);
+}
 
-    border-top: calc(1.5*var(--spacing)) solid var(--folded-corner-color, #cbcfd3);
-    border-left: calc(1.5*var(--spacing)) solid transparent;
-    
-    box-shadow: -2px 2px 2px ;
-    
-} */
+/* --- this is question matrk --- */
+.folded-container::after {
+    content: '?';
+    position: absolute;
+    font-family: var(--pixel-font);
+    font-size: calc(4.5*var(--spacing));
+    line-height: var(--spacing);
+    /* this line is for text stroke which I learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
+    -webkit-text-stroke: var(--border) var(--black);
+    top: calc(2*var(--spacing));
+    left: calc(0.7*var(--spacing));
+}
 
 /* NOT WORKING....
 .section{
     margin-block: calc(2*var(--spacing));
 } */
 
-
-/*NEED TO CHANGE THIS TWO
-.bolded-text,
-blockquote {
-    padding-inline-start: 20%;
-}
+/*
+    create nice shape-1, shape-2 by using bevel corners...
 */

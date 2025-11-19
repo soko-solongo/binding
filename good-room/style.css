@@ -21,3 +21,7 @@ blockquote::before {
 blockquote::after {
     background: var(--orange);
 }
+
+.folded-container::after {
+    color: var(--orange);
+}

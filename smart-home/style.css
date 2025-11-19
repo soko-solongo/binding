@@ -17,3 +17,7 @@ blockquote::before {
 blockquote::after {
     background: var(--green);
 }
+
+.folded-container::after {
+    color: var(--green);
+}
