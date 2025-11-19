@@ -9,3 +9,12 @@ h2 {
 .highlight{
     text-decoration-color: var(--green);
 }
+
+/* blockquote {
+    font-family: var(--heading-font);
+    font-size: calc(0.9*var(--spacing));
+    line-height: calc(1.4*var(--spacing));
+    padding-inline: 4%;
+    padding-block-start: calc(1.4*var(--spacing));
+    max-inline-size: 60ch;
+} */

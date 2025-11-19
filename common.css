@@ -91,6 +91,54 @@ h2 {
     /* margin-block-end: calc(0.8*var(--spacing)); */
 }
 
+blockquote {
+    font-family: var(--heading-font);
+    font-size: calc(0.9*var(--spacing));
+    line-height: calc(1.4*var(--spacing));
+    padding-inline-start: 8%;
+    margin-inline: 4%;
+    padding-block-start: calc(2.4*var(--spacing));
+    max-inline-size: 60ch;
+    margin-block-start: calc(2*var(--spacing));
+}
+
+blockquote ol {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+    padding-block-start: var(--spacing);
+}
+
+blockquote li:last-child{
+    text-transform: uppercase;
+}
+
+/* ---- this is quotation mark ---- */
+blockquote::before{
+    content: '“';
+    font-family: var(--heading-font);
+    font-size: calc(8*var(--spacing));
+    line-height: var(--spacing);
+    /* this line is for text stroke which I learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
+    -webkit-text-stroke: var(--border) var(--black);
+    color: var(--green);
+    position: absolute;
+    left: 8%;
+}
+
+/* ---- this is vertical line ---- */
+blockquote::after{
+    content: '';
+    font-family: var(--heading-font);
+    inline-size: var(--spacing);
+    block-size: 100%;
+    background: var(--green);
+    border: var(--border) var(--black);
+    position: absolute;
+    left: 4%;
+    display: inline-block;
+}
+
 .pixel-font{
     font-family: var(--pixel-font);
     font-size: calc(2.4*var(--spacing));
