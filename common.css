@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Silkscreen:wght@400;700&display=swap');
 
 :root{
     --spacing: 1.5rem;
     --heading-font: "Chivo Mono", monospace;
     --body-font: "DM Sans", sans-serif;
-    --pixel-font: "Pixelify Sans", sans-serif;
+    --pixel-font: "Silkscreen", sans-serif;
 
     --black: #242424;
     --green: #76EAD3;
@@ -72,7 +72,6 @@ h1 {
     font-weight: 500;
     line-height: calc(2.5*var(--spacing));
     display: inline-block;
-    box-shadow: inset 0 -0.5em var(--green);
     text-transform: uppercase;
     padding-inline: 4%;
 }
@@ -82,7 +81,6 @@ h2 {
     font-weight: 400;
     text-transform: uppercase;
     font-size: calc(1.2*var(--spacing));
-    background: var(--green);
     padding-inline: 4%;
     padding-block: 0.25em;
     border-block: solid var(--black) var(--border);
@@ -101,7 +99,6 @@ h2 {
 
 .highlight{
     text-decoration-line: underline;
-    text-decoration-color: var(--green);
     text-decoration-thickness: 0.2em;
     text-underline-offset: 0.15em;
 }
