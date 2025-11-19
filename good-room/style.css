@@ -1,0 +1,29 @@
+h1 {
+    box-shadow: inset 0 -0.5em var(--pink);
+}
+
+h2 {
+    background: var(--pink);
+}
+
+.highlight {
+    text-decoration-color: var(--pink);
+}
+
+.numbers {
+    font-family: var(--pixel-font);
+    font-size: calc(3.5*var(--spacing));
+
+    /* this line is for text stroke which I learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
+    -webkit-text-stroke: var(--border) var(--black);
+    color: var(--pink);
+}
+
+.manifesto p{
+    padding-block-start: calc(3*var(--spacing));
+}
+
+.assign-me-class {
+    font-weight: 600;
+    text-transform: uppercase;
+}
