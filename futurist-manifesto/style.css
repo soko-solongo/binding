@@ -23,11 +23,6 @@ h2 {
     padding-block-start: calc(3*var(--spacing));
 }
 
-.assign-me-class {
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
 .folded-container::after {
     color: var(--pink);
 }
