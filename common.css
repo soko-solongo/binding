@@ -16,7 +16,7 @@
 
     background: var(--light-grey);
     color: var(--black);
-    --border: calc(0.06*var(--spacing));
+    --border: 0.06rem;
 }
 
 html{scroll-behavior: smooth;}
@@ -56,7 +56,7 @@ footer li:first-child {
     text-align: right;
 }
 
-p{
+p {
     font-family: var(--body-font);
     font-size: calc(0.8*var(--spacing));
     line-height: calc(1.4*var(--spacing));
@@ -95,11 +95,13 @@ blockquote {
     font-family: var(--heading-font);
     font-size: calc(0.9*var(--spacing));
     line-height: calc(1.4*var(--spacing));
-    padding-inline-start: 8%;
+    padding-inline-start: calc(2*var(--spacing));
     margin-inline: 4%;
     padding-block-start: calc(2.4*var(--spacing));
     max-inline-size: 60ch;
     margin-block-start: calc(2*var(--spacing));
+    margin-block-end: calc(0.6*var(--spacing));
+    position: relative;
 }
 
 blockquote ol {
@@ -117,26 +119,41 @@ blockquote li:last-child{
 blockquote::before{
     content: '“';
     font-family: var(--heading-font);
-    font-size: calc(8*var(--spacing));
+    font-size: calc(8.5*var(--spacing));
     line-height: var(--spacing);
     /* this line is for text stroke which I learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
     -webkit-text-stroke: var(--border) var(--black);
     color: var(--green);
     position: absolute;
-    left: 8%;
+    left: var(--spacing);
 }
 
 /* ---- this is vertical line ---- */
 blockquote::after{
     content: '';
     font-family: var(--heading-font);
-    inline-size: var(--spacing);
+    inline-size: calc(0.8*var(--spacing));
     block-size: 100%;
     background: var(--green);
-    border: var(--border) var(--black);
+
+    box-shadow: 
+        -0.03em  -0.03em  0  var(--black), 
+         0.03em  -0.03em  0  var(--black), 
+        -0.03em   0.03em  0  var(--black), 
+         0.03em   0.03em  0  var(--black);
+
+    /* Almost the same thing above, but i want to go for simpler way
+
+        box-shadow: 
+        calc(-1*var(--border)) calc(-1*var(--border)) 0 var(--black), 
+        var(--border) calc(-1*var(--border)) 0 var(--black), 
+        calc(-1*var(--border)) var(--border) 0 var(--black), 
+        var(--border) var(--border) 0 var(--black); 
+     */
+
     position: absolute;
-    left: 4%;
-    display: inline-block;
+    top: 0;
+    left: 0;
 }
 
 .pixel-font{
@@ -173,6 +190,41 @@ blockquote::after{
     padding-inline: 6%;
     padding-block: calc(2*var(--spacing));
 }
+
+.folded-container {
+    position: relative;
+    margin-inline: 4%;
+    margin-block: var(--spacing);
+    background: var(--dark-grey);
+    border: var(--border) solid var(--black);
+    
+    /* padding-inline-start: 8%;
+    margin-inline: 4%;
+    padding-block-start: calc(2.4*var(--spacing)); */
+    /* margin-block-start: calc(2*var(--spacing)); */
+}
+
+.folded-container p{
+    font-family: var(--heading-font);
+    font-size: calc(0.8*var(--spacing));
+    line-height: calc(1.4*var(--spacing));
+    max-inline-size: 60ch;
+}
+
+/* --- The Folded Corner Effect (::before) --- */
+/* .folded-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+
+    border-top: calc(1.5*var(--spacing)) solid var(--folded-corner-color, #cbcfd3);
+    border-left: calc(1.5*var(--spacing)) solid transparent;
+    
+    box-shadow: -2px 2px 2px ;
+    
+} */
 
 /* NOT WORKING....
 .section{
