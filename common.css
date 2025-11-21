@@ -342,6 +342,10 @@ blockquote::after{
     padding-block-start: calc(0.8*var(--spacing));
 }
 
+#padding-remover {
+    padding-block-end: initial;
+}
+
 /* 
 .window-1 {
     box-shadow: inset 0 -0.5em var(--green);
