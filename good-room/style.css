@@ -7,8 +7,27 @@ h2 {
 }
 
 h3{
-    font-size: var(--spacing);
+    font-family: var(--pixel-font);
+    letter-spacing: calc(-0.2*var(--spacing));
+    font-size: calc(2.2*var(--spacing));
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-inline: 4%;
+
+    /* this line is for text stroke which I learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
+    -webkit-text-stroke: calc(0.7*var(--border)) var(--black);
+    color: var(--orange);
+
+    margin-block-start: calc(4.5*var(--spacing));
 }
+
+/* h3::first-letter{
+    font-family: var(--pixel-font);
+    letter-spacing: calc(-0.2*var(--spacing));
+    font-size: calc(1.7*var(--spacing));
+    -webkit-text-stroke: calc(0.7*var(--border)) var(--black);
+    color: var(--orange);
+} */
 
 .highlight {
     text-decoration-color: var(--orange);
@@ -24,4 +43,30 @@ blockquote::after {
 
 .folded-container::after {
     color: var(--orange);
+}
+
+.bolded-text:first-of-type {
+    margin-inline: initial;
+}
+
+.window-container ol {
+    gap: initial;
+}
+
+/* CONSIDER CHANGING THIS STYLE */
+.bold {
+    text-transform: uppercase;
+    font-family: var(--heading-font);
+    padding-block-start: calc(2.8*var(--spacing));
+    padding-block-end: calc(1.4*var(--spacing));
+    max-inline-size: 50ch;
+}
+
+ul li{
+    text-transform: uppercase;
+    font-family: var(--heading-font);
+    line-height: calc(1.2*var(--spacing));
+    padding-block-start: calc(1.4*var(--spacing));
+    margin-inline-start: calc(1.2*var(--spacing));
+    max-inline-size: 50ch;
 }
