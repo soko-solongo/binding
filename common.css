@@ -350,3 +350,25 @@ blockquote::after{
 .window-1 {
     box-shadow: inset 0 -0.5em var(--green);
 } */
+
+/* 
+@media(width>800px) {
+    p,
+    h1,
+    blockquote,
+    .window-container,
+    .selected-container {
+        margin-inline: 20%;
+    }
+
+    nav,
+    footer,
+    section {
+        padding-inline: 20%;
+    }
+
+    h2 {
+        margin-inline: calc(-2*20%);
+        padding-inline: 45%;
+    }
+} */

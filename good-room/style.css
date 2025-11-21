@@ -67,6 +67,6 @@ ul li{
     font-family: var(--heading-font);
     line-height: calc(1.2*var(--spacing));
     padding-block-start: calc(1.4*var(--spacing));
-    margin-inline-start: calc(1.2*var(--spacing));
+    margin-inline-start: 4%;
     max-inline-size: 50ch;
 }
