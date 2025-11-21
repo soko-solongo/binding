@@ -324,3 +324,25 @@ blockquote::after{
 .plus-alt {
   rotate: 45deg;
 } */
+
+
+/* ----- LANDING PAGE DESIGN ------ */
+
+.landing-title {
+    text-transform: uppercase;
+    font-family: var(--heading-font);
+    font-size: var(--spacing);
+}
+
+.landing-text {
+    padding-block: calc(2*var(--spacing));
+}
+
+.landing-text p {
+    padding-block-start: calc(0.8*var(--spacing));
+}
+
+/* 
+.window-1 {
+    box-shadow: inset 0 -0.5em var(--green);
+} */
