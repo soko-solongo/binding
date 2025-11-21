@@ -265,7 +265,8 @@ blockquote::after{
     border: solid var(--border) var(--black);
     position: relative;
     margin-inline: 4%;
-    margin-block-start: calc(2*var(--spacing));
+    margin-block-start: calc(3*var(--spacing));
+    margin-block-end: calc(1.6*var(--spacing));
     padding: calc(1.2*var(--spacing));
     display: inline-block;
 }
