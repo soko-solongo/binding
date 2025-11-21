@@ -45,13 +45,13 @@ blockquote::after {
     color: var(--orange);
 }
 
-.bolded-text:first-of-type {
+/* .bolded-text:first-of-type {
     margin-inline: initial;
-}
+} 
 
 .window-container ol {
     gap: initial;
-}
+} */
 
 /* CONSIDER CHANGING THIS STYLE */
 .bold {
