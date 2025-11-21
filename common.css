@@ -28,7 +28,7 @@ nav, footer {
     text-transform: uppercase;
     color: var(--light-grey);
     font-family: var(--heading-font);
-    font-size: calc(1.2*var(--spacing));
+    font-size: calc(1*var(--spacing));
 }
 
 /* nav{
@@ -56,6 +56,10 @@ footer li:first-child {
     text-align: right;
 }
 
+footer {
+    margin-block-start: calc(8*var(--spacing));
+}
+
 p {
     font-family: var(--body-font);
     font-size: calc(0.75*var(--spacing));
@@ -68,7 +72,7 @@ p {
 
 h1 {
     font-family: var(--heading-font);
-    font-size: calc(2.2*var(--spacing));
+    font-size: calc(2*var(--spacing));
     font-weight: 550;
     line-height: calc(2.5*var(--spacing));
     display: inline-block;
@@ -99,8 +103,8 @@ blockquote {
     margin-inline: 4%;
     padding-block-start: calc(2.4*var(--spacing));
     max-inline-size: 60ch;
-    margin-block-start: calc(2*var(--spacing));
-    margin-block-end: calc(0.6*var(--spacing));
+    margin-block-start: calc(4*var(--spacing));
+    margin-block-end: calc(3.5*var(--spacing));
     position: relative;
 }
 
@@ -156,14 +160,24 @@ blockquote::after{
 
 .pixel-font{
     font-family: var(--pixel-font);
-    font-size: calc(2.4*var(--spacing));
+    font-size: calc(2.2*var(--spacing));
     font-weight: 500;
 }
 
 .highlight{
     text-decoration-line: underline;
     text-decoration-thickness: 0.2em;
-    text-underline-offset: 0.15em;
+    text-underline-offset: 0.29em;
+}
+
+.bolded-text{
+    text-transform: uppercase;
+    font-family: var(--heading-font);
+    padding-block-start: calc(2.8*var(--spacing));
+    padding-block-end: calc(1.4*var(--spacing));
+    margin-inline: calc(1.2*var(--spacing));
+    max-inline-size: 50ch;
+    /* display: inline-block; */
 }
 
 .window-container {
@@ -177,8 +191,6 @@ blockquote::after{
     inline-size: 90%;
     max-inline-size: calc(26*var(--spacing));
     box-shadow: 0.6em -0.6em 0 var(--black);
-    /* filter: drop-shadow(5px 5px var(--black)); */
-
 }
 
 .window-container ol {
@@ -193,8 +205,8 @@ blockquote::after{
 .folded-container {
     position: relative;
     margin-inline: 4%;
-    margin-block-end: var(--spacing);
-    margin-block-start: calc(3*var(--spacing));
+    margin-block-end: calc(2*var(--spacing));
+    margin-block-start: calc(4*var(--spacing));
     background: var(--dark-grey);
     border: var(--border) solid var(--black);
     corner-shape: bevel;
@@ -253,13 +265,13 @@ blockquote::after{
     border: solid var(--border) var(--black);
     position: relative;
     margin-inline: 4%;
-    margin-block-start: calc(1.6*var(--spacing));
-    padding-block: calc(1.5*var(--spacing));
-    padding-inline: calc(1.2*var(--spacing));
+    margin-block-start: calc(2*var(--spacing));
+    padding: calc(1.2*var(--spacing));
     display: inline-block;
 }
 
 .selected-container p{
+    padding-inline: initial;
     padding-block-start: initial;
     font-family: var(--heading-font);
     font-size: calc(0.8*var(--spacing));
