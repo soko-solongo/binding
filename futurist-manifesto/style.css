@@ -13,9 +13,10 @@ h2 {
 .numbers {
     font-family: var(--pixel-font);
     font-size: calc(3.5*var(--spacing));
+    letter-spacing: calc(-0.2*var(--spacing));
 
     /* this line is for text stroke which I learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
-    -webkit-text-stroke: var(--border) var(--black);
+    -webkit-text-stroke: calc(0.7*var(--border)) var(--black);
     color: var(--pink);
 }
 

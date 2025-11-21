@@ -16,7 +16,7 @@
 
     background: var(--light-grey);
     color: var(--black);
-    --border: 0.06rem;
+    --border: 0.08rem;
 }
 
 html{scroll-behavior: smooth;}
@@ -58,7 +58,7 @@ footer li:first-child {
 
 p {
     font-family: var(--body-font);
-    font-size: calc(0.8*var(--spacing));
+    font-size: calc(0.75*var(--spacing));
     line-height: calc(1.4*var(--spacing));
     padding-inline: 4%;
     padding-block-start: calc(1.4*var(--spacing));
@@ -86,14 +86,14 @@ h2 {
     border-block: solid var(--black) var(--border);
     position: sticky;
     top: 0;
-    margin-block-start: calc(4*var(--spacing));
+    margin-block-start: calc(6*var(--spacing));
     z-index: 1;
     /* margin-block-end: calc(0.8*var(--spacing)); */
 }
 
 blockquote {
     font-family: var(--heading-font);
-    font-size: calc(0.9*var(--spacing));
+    font-size: calc(0.8*var(--spacing));
     line-height: calc(1.4*var(--spacing));
     padding-inline-start: calc(2*var(--spacing));
     margin-inline: 4%;
@@ -122,7 +122,7 @@ blockquote::before{
     font-size: calc(8.5*var(--spacing));
     line-height: var(--spacing);
     /* this line is for text stroke which I learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
-    -webkit-text-stroke: var(--border) var(--black);
+    -webkit-text-stroke: calc(0.7*var(--border)) var(--black);
     position: absolute;
     left: var(--spacing);
 }
@@ -135,10 +135,10 @@ blockquote::after{
     block-size: 100%;
 
     box-shadow: 
-        -0.03em  -0.03em  0  var(--black), 
-         0.03em  -0.03em  0  var(--black), 
-        -0.03em   0.03em  0  var(--black), 
-         0.03em   0.03em  0  var(--black);
+        -0.04em  -0.04em  0  var(--black), 
+         0.04em  -0.04em  0  var(--black), 
+        -0.04em   0.04em  0  var(--black), 
+         0.04em   0.04em  0  var(--black);
 
     /* Almost the same thing above, but i want to go for simpler way
 
@@ -175,6 +175,7 @@ blockquote::after{
     margin-inline: 4%;
     margin-block: calc(2*var(--spacing));
     inline-size: 90%;
+    max-inline-size: calc(26*var(--spacing));
     box-shadow: 0.6em -0.6em 0 var(--black);
     /* filter: drop-shadow(5px 5px var(--black)); */
 
@@ -204,7 +205,7 @@ blockquote::after{
 
 .folded-container p{
     font-family: var(--heading-font);
-    font-size: calc(0.9*var(--spacing));
+    font-size: calc(0.8*var(--spacing));
     line-height: calc(1.4*var(--spacing));
     padding-inline: calc(1.2*var(--spacing));
     padding-block-end: calc(1.4*var(--spacing));
@@ -222,8 +223,8 @@ blockquote::after{
     block-size: calc(3.2*var(--spacing));
     
     /* drawing the L-shaped line using borders */
-    border-left: calc(2*var(--border)) solid var(--black);
-    border-bottom: calc(2*var(--border)) solid var(--black);
+    border-left: var(--border) solid var(--black);
+    border-bottom: var(--border) solid var(--black);
 }
 
 /* --- this is question matrk --- */
@@ -234,7 +235,7 @@ blockquote::after{
     font-size: calc(4.5*var(--spacing));
     line-height: var(--spacing);
     /* this line is for text stroke which I learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
-    -webkit-text-stroke: var(--border) var(--black);
+    -webkit-text-stroke: calc(0.7*var(--border)) var(--black);
     top: calc(2*var(--spacing));
     left: calc(0.7*var(--spacing));
 }
@@ -247,3 +248,66 @@ blockquote::after{
 /*
     create nice shape-1, shape-2 by using bevel corners...
 */
+
+.selected-container {
+    border: solid var(--border) var(--black);
+    position: relative;
+    margin-inline: 4%;
+    margin-block-start: calc(1.6*var(--spacing));
+    padding-block: calc(1.5*var(--spacing));
+    padding-inline: calc(1.2*var(--spacing));
+    display: inline-block;
+}
+
+.selected-container p{
+    padding-block-start: initial;
+    font-family: var(--heading-font);
+    font-size: calc(0.8*var(--spacing));
+    line-height: calc(1.4*var(--spacing));
+    max-inline-size: 50ch;
+}
+
+.selected-container::before {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+    inline-size: 1em;
+    block-size: 1em;
+    border: var(--border) solid var(--black);
+    background: var(--light-grey);
+}
+
+.selected-container::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5em;
+    left: -0.5em;
+    inline-size: 1em;
+    block-size: 1em;
+    border: var(--border) solid var(--black);
+    background: var(--light-grey);
+}
+
+/* 
+.rhombus {
+  aspect-ratio: 2 / 3;
+  border-radius: 50%;
+  corner-shape: bevel;
+}
+
+.octagon {
+  aspect-ratio: 1;
+  border-radius: calc(100% / (2 + sqrt(2)));
+  corner-shape: bevel;
+}
+
+.plus {
+  aspect-ratio: 1;
+  border-radius: calc(100% / 3);
+  corner-shape: notch;
+}
+
+.plus-alt {
+  rotate: 45deg;
+} */
