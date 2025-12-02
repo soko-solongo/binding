@@ -214,8 +214,8 @@ blockquote::after{
     margin-block-start: calc(4*var(--spacing));
     background: var(--dark-grey);
     border: var(--border) solid var(--black);
-    corner-shape: bevel;
-    border-radius: 0 calc(4*var(--spacing)) 0 0;
+    /* corner-shape: bevel;
+    border-radius: 0 calc(4*var(--spacing)) 0 0; */
     max-inline-size: calc(20*var(--spacing));
     box-shadow: 0.6em -0.6em var(--black);
 
