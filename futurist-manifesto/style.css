@@ -2,6 +2,10 @@ h1 {
     box-shadow: inset 0 -0.5em var(--pink);
 }
 
+/* h2 {
+    background: var(--pink);
+} */
+
 h2 {
     background: var(--pink);
 }
