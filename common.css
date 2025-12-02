@@ -207,6 +207,10 @@ blockquote::after{
     padding-block: calc(2*var(--spacing));
 }
 
+.folded-container-wrap {
+    filter: drop-shadow(0.6em -0.6em 0 var(--black));
+}
+
 .folded-container {
     position: relative;
     margin-inline: 4%;
@@ -217,8 +221,11 @@ blockquote::after{
     /* corner-shape: bevel;
     border-radius: 0 calc(4*var(--spacing)) 0 0; */
     max-inline-size: calc(20*var(--spacing));
-    box-shadow: 0.6em -0.6em var(--black);
+    /* box-shadow: 0.6em -0.6em var(--black); */
 
+    /* filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, .5)); */
+    /* filter: drop-shadow(0.6em -0.6em 0 var(--black);) */
+    
     /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
     clip-path: polygon(
         0% 0%, /* top Left */
