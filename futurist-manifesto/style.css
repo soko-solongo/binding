@@ -12,6 +12,7 @@ h1 {
     border-bottom: var(--border) solid var(--black);
     background: var(--light-grey);
     z-index: 1;
+    margin-block-start: calc(6*var(--spacing));
 }
 
 h2 {
@@ -20,7 +21,7 @@ h2 {
     padding-inline: 4%;
     padding-block: 0.25em;
     max-inline-size: calc(20*var(--spacing));
-
+    margin-block-start: initial;
     /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
     clip-path: polygon(
         0% 0%,
