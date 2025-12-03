@@ -60,16 +60,7 @@ footer {
     margin-block-start: calc(8*var(--spacing));
 }
 
-p {
-    font-family: var(--body-font);
-    font-size: calc(0.75*var(--spacing));
-    line-height: calc(1.4*var(--spacing));
-    padding-inline: 4%;
-    padding-block-start: calc(1.4*var(--spacing));
-    max-inline-size: 60ch;
-}
-
-
+/* ------------- headings and body text -------------- */
 h1 {
     font-family: var(--heading-font);
     font-size: calc(2*var(--spacing));
@@ -85,40 +76,25 @@ h2 {
     font-weight: 400;
     text-transform: uppercase;
     font-size: calc(1.5*var(--spacing));
-    padding-inline: calc(4% + calc(1.2*var(--spacing)));
-    padding-block: 0.25em;
     border: solid var(--black) var(--border);
-    inline-size: 96%;
     margin-inline-start: 4%;
-    max-inline-size: calc(30*var(--spacing));
+    inline-size: 96%;
     position: sticky;
     top: 0;
     margin-block-start: calc(6*var(--spacing));
     z-index: 1;
-
-    /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
-    clip-path: polygon(
-        0% 0%, /* top Left */
-        100% 0%, /* top right */
-        100% 100%, /* bottom right */
-        calc(1*var(--spacing)) 100%, /* bottom-left side, start of cut */
-        0% calc(100% - calc(1*var(--spacing)))  /* left side, end of cut */
-    );
 }
 
-
-h2::before {
-    content: '';
-    font-family: var(--heading-font);
-    inline-size: calc(1*var(--spacing));
-    block-size: calc(1*var(--spacing));
-    background: var(--black);
-    position: absolute;
-    bottom: 0;
-    left: 0;
+p {
+    font-family: var(--body-font);
+    font-size: calc(0.75*var(--spacing));
+    line-height: calc(1.4*var(--spacing));
+    padding-inline: 4%;
+    padding-block-start: calc(1.4*var(--spacing));
+    max-inline-size: 60ch;
 }
 
-
+/* ------------- blockquote -------------- */
 blockquote {
     font-family: var(--heading-font);
     font-size: calc(0.8*var(--spacing));
@@ -143,7 +119,7 @@ blockquote li:last-child{
     text-transform: uppercase;
 }
 
-/* ---- this is quotation mark ---- */
+/* -- this is quotation mark -- */
 blockquote::before{
     content: '“';
     font-family: var(--heading-font);
@@ -155,7 +131,7 @@ blockquote::before{
     left: var(--spacing);
 }
 
-/* ---- this is vertical line ---- */
+/* -- this is vertical line -- */
 blockquote::after{
     content: '';
     font-family: var(--heading-font);
@@ -186,12 +162,6 @@ blockquote::after{
     font-family: var(--pixel-font);
     font-size: calc(2.2*var(--spacing));
     font-weight: 500;
-}
-
-.highlight{
-    text-decoration-line: underline;
-    text-decoration-thickness: 0.2em;
-    text-underline-offset: 0.29em;
 }
 
 .bolded-text{
@@ -240,11 +210,6 @@ blockquote::after{
     /* corner-shape: bevel;
     border-radius: 0 calc(4*var(--spacing)) 0 0; */
     max-inline-size: calc(20*var(--spacing));
-    /* box-shadow: 0.6em -0.6em var(--black); */
-
-    /* filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, .5)); */
-    /* filter: drop-shadow(0.6em -0.6em 0 var(--black);) */
-    
     /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
     clip-path: polygon(
         0% 0%, /* top Left */
@@ -279,7 +244,7 @@ blockquote::after{
     border-bottom: var(--border) solid var(--black);
 }
 
-/* --- this is question matrk --- */
+/* --- this is question mark --- */
 .folded-container::after {
     content: '?';
     position: absolute;

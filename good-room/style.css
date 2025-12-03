@@ -4,6 +4,19 @@ h1 {
 
 h2 {
     background: var(--orange);
+
+    padding-inline: calc(4% + calc(1.2*var(--spacing)));
+    padding-block: 0.25em;
+    max-inline-size: calc(30*var(--spacing));
+
+    /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
+    clip-path: polygon(
+        0% 0%, /* top Left */
+        100% 0%, /* top right */
+        100% 100%, /* bottom right */
+        calc(1*var(--spacing)) 100%, /* bottom-left side, start of cut */
+        0% calc(100% - calc(1*var(--spacing)))  /* left side, end of cut */
+    );
 }
 
 h3{
@@ -31,6 +44,9 @@ h3{
 
 .highlight {
     text-decoration-color: var(--orange);
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.2em;
+    text-underline-offset: 0.29em;
 }
 
 blockquote::before {
