@@ -19,7 +19,6 @@ h2 {
     background: var(--pink);
 
     padding-inline: 4%;
-    padding-block: 0.25em;
     max-inline-size: calc(20*var(--spacing));
     margin-block-start: initial;
     /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
@@ -30,7 +29,7 @@ h2 {
         0% 100%
     );
 
-    display: inline-block;
+    /* display: inline-block; */
     /* position: relative; */
     border-bottom: initial;
 }

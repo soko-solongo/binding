@@ -2,21 +2,29 @@ h1 {
     box-shadow: inset 0 -0.5em var(--orange);
 }
 
+.h2-wrap {
+    /* display: inline-block;
+    inline-size: auto; */
+    background: var(--pink);
+}
+
+.h2-wrap::before {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+    inline-size: 0.5em;
+    block-size: 0.5em;
+    border: var(--border) solid var(--black);
+    background: var(--black);
+}
+
 h2 {
     background: var(--orange);
-
-    padding-inline: calc(4% + calc(1.2*var(--spacing)));
-    padding-block: 0.25em;
-    max-inline-size: calc(30*var(--spacing));
-
-    /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
-    clip-path: polygon(
-        0% 0%, /* top Left */
-        100% 0%, /* top right */
-        100% 100%, /* bottom right */
-        calc(1*var(--spacing)) 100%, /* bottom-left side, start of cut */
-        0% calc(100% - calc(1*var(--spacing)))  /* left side, end of cut */
-    );
+    padding-inline: 4%;
+    max-inline-size: calc(25*var(--spacing));
+    display: inline-block;
+    /* inline-size: auto; */
 }
 
 h3{

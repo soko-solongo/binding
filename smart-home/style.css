@@ -6,7 +6,6 @@ h2 {
     background: var(--green);
 
     padding-inline: calc(4% + calc(1.2*var(--spacing)));
-    padding-block: 0.25em;
     max-inline-size: calc(30*var(--spacing));
 
     /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
