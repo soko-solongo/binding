@@ -50,16 +50,6 @@ h3{
     color: var(--orange);
 } */
 
-.highlight {
-    /* text-decoration-color: var(--orange);
-    text-decoration-line: underline;
-    text-decoration-thickness: 0.2em;
-    text-underline-offset: 0.29em; */
-    /* background: var(--orange); */
-    /* border-bottom: var(--border) solid var(--black); */
-    font-weight: 800;
-}
-
 blockquote::before {
     color: var(--orange);
 }

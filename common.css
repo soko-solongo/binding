@@ -6,12 +6,12 @@
     --body-font: "DM Sans", sans-serif;
     --pixel-font: "Silkscreen", sans-serif;
 
-    --black: #242424;
+    --black: #2D2D2D;
     --green: #76EAD3;
     --pink: #D6ABFF;
     --orange: #FFAB73;
     --light-grey: #EEF2F6;
-    --dark-grey: #DBE2EA;
+    --dark-grey: #d7dce2;
     --tab-color: #D1D7DD;
 
     background: var(--light-grey);
@@ -92,7 +92,11 @@ p {
     line-height: calc(1.4*var(--spacing));
     padding-inline: 4%;
     padding-block-start: calc(1.4*var(--spacing));
-    /* max-inline-size: 70ch; */
+    max-inline-size: 70ch;
+}
+
+section {
+    padding-block-end: calc(1*var(--spacing));
 }
 
 /* ------------- blockquote -------------- */
@@ -103,7 +107,7 @@ blockquote {
     padding-inline-start: calc(2*var(--spacing));
     margin-inline: 4%;
     padding-block-start: calc(2.4*var(--spacing));
-    max-inline-size: 60ch;
+    max-inline-size: 50ch;
     margin-block-start: calc(4*var(--spacing));
     margin-block-end: calc(3.5*var(--spacing));
     position: relative;
@@ -165,13 +169,28 @@ blockquote::after{
     font-weight: 500;
 }
 
+.highlight {
+    color: var(--dark-grey);
+    background: var(--black);
+    font-weight: 350;
+    font-size: calc(0.7*var(--spacing));
+    padding-inline: calc(0.2*var(--spacing));
+}
+
+.links {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
 .bolded-text{
     text-transform: uppercase;
     font-family: var(--heading-font);
     padding-block-start: calc(2.8*var(--spacing));
     padding-block-end: calc(1.4*var(--spacing));
-    margin-inline: calc(1.2*var(--spacing));
-    max-inline-size: 50ch;
+    max-inline-size: 60ch;
+    /* margin-inline-start: calc(1.2*var(--spacing)); */
+    margin-inline: 8%;
     /* display: inline-block; */
 }
 
@@ -183,8 +202,6 @@ blockquote::after{
     position: relative;
     margin-inline: 4%;
     margin-block: calc(2*var(--spacing));
-    inline-size: 90%;
-    max-inline-size: calc(26*var(--spacing));
     box-shadow: 0.6em -0.6em 0 var(--black);
 }
 
@@ -199,6 +216,7 @@ blockquote::after{
 
 .folded-container-wrap {
     filter: drop-shadow(0.6em -0.6em 0 var(--black));
+    margin-inline: 8%;
 }
 
 .folded-container {
@@ -270,12 +288,28 @@ blockquote::after{
 .selected-container {
     border: solid var(--border) var(--black);
     position: relative;
-    margin-inline: 4%;
-    margin-block-start: calc(3*var(--spacing));
-    margin-block-end: calc(1.6*var(--spacing));
+    margin-inline: 12%;
+    margin-block-start: calc(2*var(--spacing));
+    /* margin-block-end: calc(0*var(--spacing)); */
     padding: calc(1.2*var(--spacing));
     display: inline-block;
-    max-inline-size: 80ch;
+    max-inline-size: 70ch;
+
+    background: var(--spacing);
+    
+    /* the following lines are creating the grid background by combining the horizontal and vertical lines*/
+    background-image: 
+        /* it's the vertical lines to the right) */
+        linear-gradient(to right, var(--dark-grey) 1px, transparent 1px),
+        /* it's the horizontal lines to the bottom) */
+        linear-gradient(to bottom, var(--dark-grey) 1px, transparent 1px);
+        
+    /*change the values to keep the cells smaller or bigger*/
+    background-size: calc(1.8*var(--spacing)) calc(1.8*var(--spacing));
+    
+    /* prevents the grid from moving when the user scrolls, and keeps it still/locked */
+    background-attachment: fixed; 
+
 }
 
 .selected-container p{
@@ -358,24 +392,64 @@ blockquote::after{
     box-shadow: inset 0 -0.5em var(--green);
 } */
 
-/* 
-@media(width>800px) {
+@media(width>900px) {
+    :root {
+        font-size: 115%;
+    }
+
     p,
-    h1,
-    blockquote,
-    .window-container,
-    .selected-container {
+    .folded-container,
+    .bolded-text {
+        margin-inline: auto;
+        max-inline-size: 70ch;
+    }
+
+    .folded-container p {
+        font-size: 150%;
+        line-height: calc(1.8*var(--spacing));
+        padding-block-end: calc(1.6*var(--spacing));
+        padding-block-start: calc(5.5*var(--spacing));
+    }
+
+    /* .selected-container {
+        margin-inline: auto;
+    } */
+
+    /* h2 {
+        padding-inline: 20%;
+    } */
+
+    blockquote {
         margin-inline: 20%;
+        max-inline-size: 60ch;
+    }
+    /* blockquote,
+    .selected-container {
+        margin-inline: 8% + auto;
+    } */
+
+    nav,
+    footer {
+        padding-inline: 8%;
+    }
+    
+    section {
+        margin-inline: auto;
+    }
+
+    /* header,
+    blockquote,
+    .selected-container {
+        margin-inline: 8%;
     }
 
     nav,
     footer,
     section {
-        padding-inline: 20%;
+        padding-inline: 8%;
     }
 
-    h2 {
-        margin-inline: calc(-2*20%);
-        padding-inline: 45%;
-    }
-} */
+    section {
+        margin-inline: auto;
+    } */
+}
