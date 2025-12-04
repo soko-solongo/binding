@@ -76,3 +76,10 @@ h2::before {
 .folded-container::after {
     color: var(--pink);
 }
+
+@media(width>750px) {
+    p{
+        inline-size: 80%;
+        max-inline-size: 65ch;
+    }
+}

@@ -92,7 +92,7 @@ p {
     line-height: calc(1.4*var(--spacing));
     padding-inline: 4%;
     padding-block-start: calc(1.4*var(--spacing));
-    max-inline-size: 60ch;
+    /* max-inline-size: 70ch; */
 }
 
 /* ------------- blockquote -------------- */
@@ -275,6 +275,7 @@ blockquote::after{
     margin-block-end: calc(1.6*var(--spacing));
     padding: calc(1.2*var(--spacing));
     display: inline-block;
+    max-inline-size: 80ch;
 }
 
 .selected-container p{
