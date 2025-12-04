@@ -65,21 +65,3 @@ h2::before {
 .folded-container::after {
     color: var(--pink);
 }
-
-/* @media(width>750px) {
-    :root {
-        font-size: 110%;
-    }
-
-    header,
-    blockquote,
-    .selected-container {
-        margin-inline: 8%;
-    }
-
-    nav,
-    footer,
-    section {
-        padding-inline: 8%;
-    }
-} */
