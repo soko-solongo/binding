@@ -2,6 +2,10 @@ h1 {
     box-shadow: inset 0 -0.5em var(--green);
 }
 
+.h2-wrap {
+    background: initial;
+}
+
 h2 {
     background: var(--green);
     padding-inline: calc(4% + calc(1.2*var(--spacing)));
@@ -40,4 +44,11 @@ blockquote::after {
 
 .folded-container::after {
     color: var(--green);
+}
+
+@media(width>1000px) {
+    .h2-wrap {
+        padding-block-start: var(--spacing);
+        background: var(--light-grey);
+    }
 }

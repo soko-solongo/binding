@@ -3,28 +3,35 @@ h1 {
 }
 
 .h2-wrap {
-    /* display: inline-block;
-    inline-size: auto; */
-    /* background: var(--pink); */
+    border-bottom: var(--border) solid var(--black);
+    margin-inline: 4%;
 }
 
 .h2-wrap::before {
     content: "";
     position: absolute;
-    top: -0.5em;
-    right: -0.5em;
-    inline-size: 0.5em;
-    block-size: 0.5em;
+    top: 3.5em;
+    right: 0em;
+    inline-size: calc(0.62*var(--spacing));
+    block-size: calc(0.62*var(--spacing));
     border: var(--border) solid var(--black);
     background: var(--black);
+    /* border-bottom: var(--border) solid var(--black); */
 }
 
 h2 {
     background: var(--orange);
     padding-inline: 4%;
-    max-inline-size: calc(25*var(--spacing));
-    display: inline-block;
-    /* inline-size: auto; */
+    /* max-inline-size: calc(25*var(--spacing)); */
+    margin-inline-start: initial;
+    inline-size: initial;
+
+    /* to set the black line in the middle of orange box */
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    /* padding-block: 0;
+    line-height: calc(2.49*var(--spacing)); */
 }
 
 h3{
@@ -86,4 +93,10 @@ ul li{
     padding-block-start: calc(1.4*var(--spacing));
     margin-inline-start: 4%;
     max-inline-size: 50ch;
+}
+
+@media(width>1000px) {
+    .h2-wrap {
+        margin-inline-start: 8%;
+    }
 }

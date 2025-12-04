@@ -7,19 +7,14 @@ h1 {
 } */
 
 .h2-wrap {
-    position: sticky;
-    top: 0;
     border-bottom: var(--border) solid var(--black);
-    background: var(--light-grey);
-    z-index: 1;
-    margin-block-start: calc(6*var(--spacing));
 }
 
 h2 {
     background: var(--pink);
     padding-inline-start: 4%;
     max-inline-size: calc(20*var(--spacing));
-    margin-block-start: initial;
+    /* margin-block-start: initial; */
     /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
     clip-path: polygon(
         0% 0%,
@@ -64,4 +59,10 @@ h2::before {
 
 .folded-container::after {
     color: var(--pink);
+}
+
+@media(width>1000px) {
+    .h2-wrap {
+        padding-block-start: var(--spacing);
+    }
 }

@@ -96,18 +96,25 @@ h1 {
     padding-inline: 4%;
 }
 
+.h2-wrap {
+    position: sticky;
+    top: 0;
+    background: var(--light-grey);
+    z-index: 1;
+    margin-block-start: calc(6*var(--spacing));
+}
+
 h2 {
     font-family: var(--heading-font);
     font-weight: 400;
     text-transform: uppercase;
     font-size: calc(1.5*var(--spacing));
     border: solid var(--black) var(--border);
-     padding-block: 0.25em;
+    padding-block: 0.25em;
     margin-inline-start: 4%;
     inline-size: 96%;
     position: sticky;
-    top: 0;
-    margin-block-start: calc(6*var(--spacing));
+    top: calc(1*var(--spacing));
     z-index: 1;
 }
 
@@ -489,10 +496,13 @@ blockquote::after{
         text-align: left;
     }
 
+    h2 {
+        margin-inline-start: 8%;
+    }
+
     p,
-    .folded-container,
-    .bolded-text {
-        margin-inline: auto;
+    .folded-container {
+        margin-inline: 8%;
         max-inline-size: 70ch;
     }
 
@@ -503,10 +513,15 @@ blockquote::after{
         padding-block-start: calc(5.5*var(--spacing));
     }
 
-    blockquote, 
     .selected-container {
         margin-inline: 8%;
         max-inline-size: 60ch;
+    }
+
+    blockquote,
+    .bolded-text {
+        margin-inline: 20%;
+        max-inline-size: 50ch;
     }
 
     section {
