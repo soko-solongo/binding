@@ -411,16 +411,16 @@ blockquote::after{
         padding-block-start: calc(5.5*var(--spacing));
     }
 
-    /* .selected-container {
-        margin-inline: auto;
-    } */
+    .selected-container {
+        margin-inline: 4%
+    }
 
     /* h2 {
         padding-inline: 20%;
     } */
 
     blockquote {
-        margin-inline: 20%;
+        margin-inline: auto;
         max-inline-size: 60ch;
     }
     /* blockquote,
