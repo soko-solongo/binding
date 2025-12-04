@@ -31,10 +31,12 @@ h2::before {
 }
 
 .highlight {
-    text-decoration-color: var(--green);
+    /* text-decoration-color: var(--green);
     text-decoration-line: underline;
     text-decoration-thickness: 0.2em;
-    text-underline-offset: 0.29em;
+    text-underline-offset: 0.29em; */
+    background: var(--dark-grey);
+    border-block: var(--border) solid var(--black);
 }
 
 blockquote::before {
