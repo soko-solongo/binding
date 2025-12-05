@@ -100,3 +100,17 @@ ul li{
         margin-inline-start: 8%;
     }
 }
+
+
+@media(width>1300px) {
+    h1 {
+        font-size: calc(5*var(--spacing));
+        font-weight: 600;
+    }
+
+    .h1-deco {
+        padding-inline: calc(1.5*var(--spacing));
+        padding-block: calc(1.4*var(--spacing));
+        margin-block: calc(1.6*var(--spacing));
+    }
+}

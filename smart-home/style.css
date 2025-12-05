@@ -1,21 +1,36 @@
 h1 {
     font-family: var(--heading-font);
-    font-size: calc(2*var(--spacing));
+    font-size: calc(2.2*var(--spacing));
     font-weight: 550;
     line-height: calc(2.5*var(--spacing));
-    /* display: inline-block; */
     text-transform: uppercase;
-    padding-inline: 4%;
+    letter-spacing: calc(-0.1*var(--spacing));
 }
 
-.h1-deco::before {
-    content: '';
+.pixel-font{
+    font-family: var(--pixel-font);
+    font-size: calc(2.4*var(--spacing));
+    font-weight: 500;
+}
+
+.decos {
+    display: flex;
+    flex-direction: row;
+    gap: calc(1*var(--spacing));
+    overflow: hidden;
+    position: relative;
+}
+
+.h1-deco-1,
+.h1-deco-2,
+.h1-deco-3 {
+    display: block;
     inline-size: calc(3*var(--spacing));
     block-size: calc(3*var(--spacing));
     background: var(--green);
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    border: var(--border) solid var(--black);
+    position: relative;
+
     /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
     clip-path: polygon(
         0% 0%, /* top Left */
@@ -24,9 +39,13 @@ h1 {
         calc(0.5*var(--spacing)) 100%, /* bottom-left side, start of cut */
         0% calc(100% - calc(0.5*var(--spacing)))  /* left side, end of cut */
     );
+
+    margin-block: var(--spacing);
 }
 
-.h1-deco::after {
+.h1-deco-1::before,
+.h1-deco-2::before,
+.h1-deco-3::before {
     content: '';
     font-family: var(--heading-font);
     inline-size: calc(0.5*var(--spacing));
@@ -35,6 +54,60 @@ h1 {
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+@keyframes spread-1 {
+    0% {
+        transform: translateX(0); 
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes spread-2 {
+    0% {
+        transform: translateX(calc(-4 * var(--spacing))) rotate(5deg);
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes spread-3 {
+    0% {
+        transform: translateX(calc(-8 * var(--spacing))) rotate(10deg);
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0); 
+    }
+}
+
+.h1-deco-1 {
+    animation: spread-1 2.5s ease-in-out infinite forwards;
+    margin-inline-start: var(--spacing);
+}
+
+.h1-deco-2 {
+    animation: spread-2 2.5s ease-in-out infinite forwards;
+    animation-delay: 0.7s;
+}
+
+.h1-deco-3 {
+    animation: spread-3 2.5s ease-in-out infinite forwards;
+    animation-delay: 0.8s;
 }
 
 .h2-wrap {
@@ -79,6 +152,39 @@ blockquote::after {
 
 .folded-container::after {
     color: var(--green);
+}
+
+@media(width>600px) {
+    h1 {
+        font-size: calc(3.4*var(--spacing));
+        font-weight: 500;
+        line-height: calc(3.5*var(--spacing));
+        letter-spacing: calc(-0.2*var(--spacing));
+    }
+
+    .pixel-font{
+        font-size: calc(3.7*var(--spacing));
+    }
+
+    .h1-deco-1,
+    .h1-deco-2,
+    .h1-deco-3 {
+    inline-size: calc(4*var(--spacing));
+    block-size: calc(4*var(--spacing));
+    }
+}
+
+@media(width>800px) {
+    h1 {
+        font-size: calc(4*var(--spacing));
+        font-weight: 520;
+        line-height: calc(4*var(--spacing));
+        letter-spacing: calc(-0.2*var(--spacing));
+    }
+
+    .pixel-font{
+        font-size: calc(4.4*var(--spacing));
+    }
 }
 
 @media(width>1000px) {

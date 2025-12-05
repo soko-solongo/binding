@@ -190,11 +190,6 @@ blockquote::after{
 }
 
 /* ------------- class -------------- */
-.pixel-font{
-    font-family: var(--pixel-font);
-    font-size: calc(2.2*var(--spacing));
-    font-weight: 500;
-}
 
 .highlight {
     color: var(--dark-grey);
