@@ -5,6 +5,7 @@ h1 {
 .h2-wrap {
     border-bottom: var(--border) solid var(--black);
     margin-inline: 4%;
+    margin-block-end: calc(1.5*var(--spacing));
 }
 
 .h2-wrap::before {
@@ -67,6 +68,57 @@ blockquote::after {
 
 .folded-container::after {
     color: var(--orange);
+}
+
+.sticky-container {
+    padding-inline-end: calc(1.2*var(--spacing));
+    padding-inline-start: calc(1.2*var(--spacing));
+    margin-block-start: calc(1.5*var(--spacing));
+    border: var(--border) solid var(--black);
+
+    /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
+    clip-path: polygon(
+        0% 0%, /* top Left */
+        100% 0%, /* top right */
+        100% 100%, /* bottom right */
+        calc(0.8*var(--spacing)) 100%, /* bottom-left side, start of cut */
+        0% calc(100% - calc(0.8*var(--spacing)))  /* left side, end of cut */
+    );
+
+    text-transform: uppercase;
+    font-family: var(--heading-font);
+    font-weight: 500;
+    line-height: calc(1.2*var(--spacing));
+    padding-block: var(--spacing);
+    display: inline-block;
+    margin-inline-start: 12%;
+    position: relative;
+
+    /* the following lines are creating the grid background by combining the horizontal and vertical lines*/
+    background-image: 
+        /* it's the vertical lines to the right) */
+        /* linear-gradient(to right, var(--dark-grey) 1px, transparent 1px), */
+        /* it's the horizontal lines to the bottom) */
+        linear-gradient(to bottom, var(--dark-grey) 1px, transparent 1px);
+        
+    /*change the values to keep the cells smaller or bigger*/
+    background-size: calc(1.2*var(--spacing)) calc(1.2*var(--spacing));
+}
+
+
+.sticky-container::before {
+    content: '';
+    /* font-family: var(--heading-font); */
+    inline-size: calc(0.8*var(--spacing));
+    block-size: calc(0.8*var(--spacing));
+    background: var(--black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.sticky-container {
+    margin-inline-end: initial;
 }
 
 /* .bolded-text:first-of-type {

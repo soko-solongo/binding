@@ -327,8 +327,6 @@ blockquote::after{
     padding: calc(1.2*var(--spacing));
     display: inline-block;
     max-inline-size: 70ch;
-
-    background: var(--spacing);
     
     /* the following lines are creating the grid background by combining the horizontal and vertical lines*/
     background-image: 
@@ -338,10 +336,10 @@ blockquote::after{
         linear-gradient(to bottom, var(--dark-grey) 1px, transparent 1px);
         
     /*change the values to keep the cells smaller or bigger*/
-    background-size: calc(1.8*var(--spacing)) calc(1.8*var(--spacing));
+    background-size: calc(1.2*var(--spacing)) calc(1.2*var(--spacing));
     
     /* prevents the grid from moving when the user scrolls, and keeps it still/locked */
-    background-attachment: fixed; 
+    /* background-attachment: fixed;  */
 
 }
 
@@ -375,6 +373,17 @@ blockquote::after{
     border: var(--border) solid var(--black);
     background: var(--black);
 }
+
+.two-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .two-column:nth-child(2) {
+    margin-inline: initial;
+    padding-inline: initial;
+} */
+
 
 /* 
 .rhombus {
@@ -432,6 +441,7 @@ blockquote::after{
         font-size: 115%;
     }
 
+    /* ----- changing the specifics of grid ----- */
     .main-layout {
         /* redefining the layout structure of content (previously set to be stacked burger) */
 
@@ -496,8 +506,13 @@ blockquote::after{
         text-align: left;
     }
 
+    /* ----- changing the specifics of heading, p, and classes ----- */
     h2 {
         margin-inline-start: 8%;
+    }
+
+    .h2-wrap {
+        margin-block-end: calc(1.5*var(--spacing));
     }
 
     p,
@@ -508,8 +523,8 @@ blockquote::after{
 
     .folded-container p {
         font-size: 150%;
+        margin-inline: initial;
         line-height: calc(1.8*var(--spacing));
-        padding-block-end: calc(1.6*var(--spacing));
         padding-block-start: calc(5.5*var(--spacing));
     }
 
