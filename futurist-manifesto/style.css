@@ -148,15 +148,18 @@ h2::before {
 @media(width>800px) {
     h1 {
         font-size: calc(4*var(--spacing));
+        font-weight: 600;
     }
 
     .h1-deco {
         padding-inline: calc(1.5*var(--spacing));
         padding-block: calc(1*var(--spacing));
+        margin-block: calc(0.4*var(--spacing));
     }
 }
 
 @media(width>1000px) {
+
     .h2-wrap {
         padding-block-start: var(--spacing);
     }
@@ -166,8 +169,9 @@ h2::before {
     }
 
     .manifesto-container {
-        margin-inline-start: 4%;
-        margin-inline-end: 8%;
+        margin-inline: 16%;
+        display: flex;
+        flex-direction: column;
     }
 
     .manifesto {
@@ -191,14 +195,15 @@ h2::before {
     }
 }
 
-@media(width>1200px) {
+@media(width>1300px) {
     h1 {
         font-size: calc(5*var(--spacing));
+        font-weight: 600;
     }
 
     .h1-deco {
         padding-inline: calc(1.5*var(--spacing));
         padding-block: calc(1.4*var(--spacing));
-        margin-block: calc(1.2*var(--spacing));
+        margin-block: calc(1.6*var(--spacing));
     }
 }

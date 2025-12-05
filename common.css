@@ -495,7 +495,7 @@ blockquote::after{
 
     /* ----- changing the specifics of heading, p, and classes ----- */
     h2 {
-        margin-inline-start: 8%;
+        margin-inline-start: 12%;
     }
 
     .h2-wrap {
@@ -517,6 +517,7 @@ blockquote::after{
 
     .selected-container {
         margin-inline: 8%;
+        margin-block: calc(3*var(--spacing));
     }
 
     blockquote,
