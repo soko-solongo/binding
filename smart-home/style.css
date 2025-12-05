@@ -212,4 +212,10 @@ blockquote::after {
         padding-block-start: var(--spacing);
         background: var(--light-grey);
     }
+
+    .window-container {
+        display: inline-block;
+        padding-inline-end: 10%;
+        margin-inline-start: 20%;
+    }
 }

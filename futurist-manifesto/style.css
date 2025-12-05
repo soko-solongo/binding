@@ -5,7 +5,6 @@ h1 {
     letter-spacing: calc(0.14*var(--spacing));
     line-height: calc(3*var(--spacing));
     text-transform: uppercase;
-    /* padding-inline: 4%; */
 }
 
 .h1-deco,

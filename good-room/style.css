@@ -1,6 +1,45 @@
-/* h1 {
-    box-shadow: inset 0 -0.5em var(--orange);
+h1 {
+    font-family: var(--body-font);
+    font-size: calc(2.3*var(--spacing));
+    font-weight: 700;
+    line-height: calc(2.8*var(--spacing));
+    text-transform: uppercase;
+    padding-inline-start: calc(4*var(--spacing));
+}
+
+/* .inhaling-box {
+    position: relative;
 } */
+
+.stretching-box {
+    position: relative;
+}
+
+.h1-deco {
+    display: block;
+    inline-size: calc(3*var(--spacing));
+    block-size: calc(7.3*var(--spacing));
+    background: var(--green);
+    border: var(--border) solid var(--black);
+    position: absolute;
+    background: var(--orange);
+    border: var(--border) solid var(--black);
+    top: 0.8em;
+    left: 0;
+
+    /* transition takes 0.5s and uses an ease-in-out timing */
+    transition: 0.5s ease-in-out; 
+
+    /* animation: custom name | duration of one full cycle | timing function | iteration-count | delay */
+    animation: stretching 4s ease infinite 0s;
+}
+
+@keyframes stretching {
+	0% {
+        /* starts from nothing */
+		block-size: 0;
+	}
+}
 
 .h2-wrap {
     border-bottom: var(--border) solid var(--black);
@@ -40,13 +79,13 @@ h3{
     font-size: calc(2.2*var(--spacing));
     font-weight: 400;
     text-transform: uppercase;
-    padding-inline: 4%;
+    margin-inline: 4%;
 
     /* this line is for text stroke which I learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
     -webkit-text-stroke: calc(0.7*var(--border)) var(--black);
     color: var(--orange);
 
-    margin-block-start: calc(4.5*var(--spacing));
+    margin-block-start: calc(5*var(--spacing));
 }
 
 /* h3::first-letter{
@@ -69,21 +108,26 @@ blockquote::after {
     color: var(--orange);
 }
 
-/* .bolded-text:first-of-type {
-    margin-inline: initial;
-} 
 
-.window-container ol {
-    gap: initial;
-} */
+.selected-container {
+    /* the following lines are creating the grid background by combining the horizontal and vertical lines*/
+    background-image: 
+        linear-gradient(to right, var(--dark-grey) 1px, transparent 1px);
+    /*change the values to keep the cells smaller or bigger*/
+    background-size: calc(1.4*var(--spacing)) calc(1.4*var(--spacing));
+}
 
-/* CONSIDER CHANGING THIS STYLE */
-.bold {
-    text-transform: uppercase;
-    font-family: var(--heading-font);
-    padding-block-start: calc(2.8*var(--spacing));
-    padding-block-end: calc(1.4*var(--spacing));
-    max-inline-size: 50ch;
+.selected-container::before,
+.selected-container::after {
+    visibility: hidden;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-inline-start: 8%;
+    max-inline-size: 80%;
 }
 
 ul li{
@@ -91,26 +135,68 @@ ul li{
     font-family: var(--heading-font);
     line-height: calc(1.2*var(--spacing));
     padding-block-start: calc(1.4*var(--spacing));
-    margin-inline-start: 4%;
     max-inline-size: 50ch;
+    display: block;
 }
 
+@media(width>600px) {
+    h1 {
+        font-size: calc(3.4*var(--spacing));
+        font-weight: 650;
+        line-height: calc(3.5*var(--spacing));
+    }
+
+    .h1-deco {
+        block-size: calc(9.4*var(--spacing));
+    }
+}
+
+@media(width>800px) {
+    h1 {
+        font-size: calc(4.5*var(--spacing));
+        line-height: calc(5*var(--spacing));
+        font-weight: 600;
+    }
+
+    .h1-deco {
+        block-size: calc(13.5*var(--spacing));
+    }
+}
+
+/* ---------- MAIN BREAKPOINT ----------- */
 @media(width>1000px) {
     .h2-wrap {
         margin-inline-start: 8%;
     }
+
+    h3 {
+        margin-inline-start: 12%;
+    }
+
+    .selected-container {
+        margin-inline-start: 20%;
+    }
+
+    ul {
+        margin-inline-start: 20%;
+    }
+
+    .window-container {
+        padding-inline-end: 20%;
+        margin-inline: 20%;
+    }
+
 }
 
 
 @media(width>1300px) {
     h1 {
-        font-size: calc(5*var(--spacing));
+        font-size: calc(4.5*var(--spacing));
+        line-height: calc(5*var(--spacing));
         font-weight: 600;
     }
 
     .h1-deco {
-        padding-inline: calc(1.5*var(--spacing));
-        padding-block: calc(1.4*var(--spacing));
-        margin-block: calc(1.6*var(--spacing));
+        block-size: calc(13.5*var(--spacing));
     }
 }

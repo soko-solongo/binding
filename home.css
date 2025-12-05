@@ -200,15 +200,9 @@ blockquote::after{
 }
 
 a {
-    /* font-weight: 600;
+    font-weight: 600;
     text-decoration: underline;
-    text-decoration-style: solid; */
-}
-
-
-
-a:hover {
-    color: var(--pink)
+    text-decoration-style: solid;
 }
 
 .bolded-text{
