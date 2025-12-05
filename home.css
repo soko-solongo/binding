@@ -81,75 +81,218 @@ footer li:first-child {
     text-align: right;
 }
 
-/* --------- DESKTOP/TABLET BREAKPOINT ADJUSTMENTS ------- */
-@media(width>1000px) {
-    :root {
-        font-size: 115%;
-    }
+.styled-image {
+    filter: grayscale(30%);
+    block-size: 50%;
+    align-items: center;
+    top: 0;
+}
 
-    /* ----- changing the specifics of grid ----- */
-    .main-layout {
-        /* redefining the layout structure of content (previously set to be stacked burger) */
+img {
+    block-size: calc(12*var(--spacing));
+    inline-size: 100%;
+    overflow: hidden;
+}
 
-        /* sidebar (nav + footer) takes 20% of the screen width, and rest of the content will fill up the space */
-        grid-template-columns: 20% 1fr;
+header {
+    display: flex;
+    flex-direction: column;
+    margin: var(--spacing);
+}
 
-        /* nav row, content row, footer row */
-        grid-template-rows: auto 1fr auto;
+h1 {
+    font-family: var(--body-font);
+    font-size: calc(1.8*var(--spacing));
+    font-weight: 900;
+    line-height: calc(2.2*var(--spacing));
+    text-transform: uppercase;
+    padding-block-end: var(--spacing);
+    padding-block-start: var(--spacing);
 
-        /* footer goes below nav, but article must spans both rows */
-        grid-template-areas:
-            "nav    content"
-            "nav    content"
-            "footer content";
-        min-block-size: 100vh;
-    }
+}
 
-    /* nav must positioned in the first column*/
-    nav {
-        grid-area: nav;
-        position: sticky;
-        top: 0;
-        min-block-size: 100vh;
-        padding-inline: 20%;
-        padding-block: calc(2*var(--spacing));
+.bolded-text {
+    text-transform: uppercase;
+    font-family: var(--heading-font);
+    padding-block-start: calc(2.8*var(--spacing));
+    padding-block-end: calc(1.4*var(--spacing));
+    max-inline-size: 60ch;
+    margin-inline: 8%;
+}
 
-        /* setting the internal content of nav to be vertical stacking */
-        /* display: flex; */
-        flex-direction: column;
-        justify-content: space-between;
-    }
+h2 {
+    text-transform: uppercase;
+    font-family: var(--heading-font);
+    padding-block-start: calc(2.8*var(--spacing));
+    max-inline-size: 60ch;
+    margin-inline: 4%;
+    font-size: calc(1.5*var(--spacing));
+}
 
-    /* article must positioned in the second column*/
-    article {
-        grid-area: content;
+p {
+    font-family: var(--body-font);
+    font-size: calc(0.75*var(--spacing));
+    line-height: calc(1.4*var(--spacing));
+    padding-inline: 4%;
+    padding-block-start: calc(1.4*var(--spacing));
+    max-inline-size: 70ch;
+}
 
-        /* make article span the entire height (nav row and its own row) */
-        grid-row: nav / span 2;
-    }
+footer {
+    margin-block-start: calc(4*var(--spacing));
+}
 
-    /* footer must positioned in the first column, but bottom row*/
-    footer {
-        grid-area: footer;
-        padding-inline: 20%;
-        padding-block: calc(2*var(--spacing));
-        font-size: calc(0.8*var(--spacing));
-    }
+.footer-svg-line {
+    display: block;
+    width: 90%;
+    height: 10px;
+    margin: 0 auto calc(1.5 * var(--spacing)) auto; 
+    overflow: visible;
+}
 
-    nav ol {
-        flex-direction: column;
-        position: sticky;
-        top: calc(2*var(--spacing));
-        /* gap: calc(3*(var(--spacing))); */
-    }
+.svg-footer-stroke {
+    fill: var(--light-grey); 
+    stroke: none;
+}
 
-    footer ol {
-        gap: calc(1*(var(--spacing)));
-    }
+.window-container {
+    background: var(--dark-grey);
+    border: var(--border) solid var(--black);
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    margin-inline: 4%;
+    margin-block: calc(2*var(--spacing));
+    box-shadow: 0.6em -0.6em 0 var(--black);
+}
 
-    footer li {
-        opacity: 70%;
-        text-align: center;
-        font-size: calc(2*var(--spacing);)
-    }
+.window-container ol {
+    display: flex;
+    flex-direction: column;
+    gap: calc(3*var(--spacing));
+    background: var(--dark-grey);
+    padding-inline: 6%;
+    padding-block: calc(2*var(--spacing));
+}
+
+.window-container p {
+    margin: initial;
+    padding-block: initial;
+}
+
+
+/* -------- styling for first box --------- */
+.one {
+    font-family: var(--heading-font);
+    font-size: calc(2.2*var(--spacing));
+    font-weight: 550;
+    line-height: calc(2.5*var(--spacing));
+    text-transform: uppercase;
+    letter-spacing: calc(-0.1*var(--spacing));
+}
+
+.pixel-font{
+    font-family: var(--pixel-font);
+    font-size: calc(2*var(--spacing));
+    font-weight: 500;
+}
+
+.decos {
+    display: flex;
+    flex-direction: row;
+    gap: calc(1*var(--spacing));
+    overflow: hidden;
+    position: relative;
+}
+
+.one-deco-1,
+.one-deco-2,
+.one-deco-3 {
+    display: block;
+    inline-size: calc(3*var(--spacing));
+    block-size: calc(3*var(--spacing));
+    background: var(--green);
+    border: var(--border) solid var(--black);
+    position: relative;
+
+    /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
+    clip-path: polygon(
+        0% 0%, /* top Left */
+        100% 0%, /* top right */
+        100% 100%, /* bottom right */
+        calc(0.5*var(--spacing)) 100%, /* bottom-left side, start of cut */
+        0% calc(100% - calc(0.5*var(--spacing)))  /* left side, end of cut */
+    );
+
+    margin-block: var(--spacing);
+}
+
+.one-deco-1::before,
+.one-deco-2::before,
+.one-deco-3::before {
+    content: '';
+    font-family: var(--heading-font);
+    inline-size: calc(0.5*var(--spacing));
+    block-size: calc(0.5*var(--spacing));
+    background: var(--black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* -------- styling for second box --------- */
+.second {
+    font-family: var(--body-font);
+    font-size: calc(2.3*var(--spacing));
+    font-weight: 700;
+    letter-spacing: calc(0.14*var(--spacing));
+    line-height: calc(3*var(--spacing));
+    text-transform: uppercase;
+}
+
+.second-deco {
+    border: var(--border) solid var(--black);
+
+    /* --- I learned this rotating animation from here https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes */
+    
+    /* treating it as a block to make it move/animate */
+    display: inline-block;
+    /* transition takes 0.5s and uses an ease-in-out timing */
+    transition: 0.5s ease-in-out; 
+
+    /* animation: custom name | duration of one full cycle | timing function | iteration-count | delay */
+    animation: rotating 4s ease infinite 0s;
+}
+
+.second-deco {
+    background: var(--pink);
+    font-weight: 250;
+    padding-inline: calc(0.7*var(--spacing));
+}
+
+/* -------- styling for third box --------- */
+.third {
+    font-family: var(--body-font);
+    font-size: calc(2.3*var(--spacing));
+    font-weight: 700;
+    line-height: calc(2.8*var(--spacing));
+    text-transform: uppercase;
+    padding-inline-start: calc(4*var(--spacing));
+}
+
+.stretching-box {
+    position: relative;
+}
+
+.third-deco {
+    display: block;
+    inline-size: calc(3*var(--spacing));
+    block-size: calc(7.3*var(--spacing));
+    background: var(--green);
+    border: var(--border) solid var(--black);
+    position: absolute;
+    background: var(--orange);
+    border: var(--border) solid var(--black);
+    top: 0.6em;
+    left: 60%;
 }

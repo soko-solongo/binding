@@ -7,10 +7,6 @@ h1 {
     padding-inline-start: calc(4*var(--spacing));
 }
 
-/* .inhaling-box {
-    position: relative;
-} */
-
 .stretching-box {
     position: relative;
 }
