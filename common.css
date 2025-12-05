@@ -91,7 +91,7 @@ h1 {
     font-size: calc(2*var(--spacing));
     font-weight: 550;
     line-height: calc(2.5*var(--spacing));
-    display: inline-block;
+    /* display: inline-block; */
     text-transform: uppercase;
     padding-inline: 4%;
 }
