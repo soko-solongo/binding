@@ -117,6 +117,10 @@ p {
     max-inline-size: 70ch;
 }
 
+header p {
+    padding-inline: initial;
+}
+
 section {
     padding-block-end: calc(1*var(--spacing));
 }
@@ -212,9 +216,7 @@ blockquote::after{
     padding-block-start: calc(2.8*var(--spacing));
     padding-block-end: calc(1.4*var(--spacing));
     max-inline-size: 60ch;
-    /* margin-inline-start: calc(1.2*var(--spacing)); */
     margin-inline: 8%;
-    /* display: inline-block; */
 }
 
 .window-container {
@@ -231,10 +233,15 @@ blockquote::after{
 .window-container ol {
     display: flex;
     flex-direction: column;
-    gap: calc(2.5*var(--spacing));
+    gap: calc(3*var(--spacing));
     background: var(--dark-grey);
     padding-inline: 6%;
     padding-block: calc(2*var(--spacing));
+}
+
+.window-container p {
+    margin: initial;
+    padding-block: initial;
 }
 
 .folded-container-wrap {
@@ -510,7 +517,6 @@ blockquote::after{
 
     .selected-container {
         margin-inline: 8%;
-        max-inline-size: 60ch;
     }
 
     blockquote,
