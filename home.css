@@ -82,7 +82,7 @@ footer li:first-child {
 }
 
 .styled-image {
-    filter: grayscale(30%);
+    filter: grayscale();
     block-size: 50%;
     align-items: center;
     top: 0;
