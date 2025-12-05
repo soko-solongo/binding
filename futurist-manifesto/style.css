@@ -1,10 +1,65 @@
-/* h1 {
-    box-shadow: inset 0 -0.5em var(--pink);
-} */
+h1 {
+    font-family: var(--body-font);
+    font-size: calc(2.3*var(--spacing));
+    font-weight: 700;
+    letter-spacing: calc(0.14*var(--spacing));
+    line-height: calc(3*var(--spacing));
+    text-transform: uppercase;
+    /* padding-inline: 4%; */
+}
 
-/* .h2-wrap {
-    filter: drop-shadow(0.6em -0.6em 0 var(--black));
-} */
+.h1-deco,
+.p-deco {
+    border: var(--border) solid var(--black);
+
+    /* --- I learned this rotating animation from here https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes */
+    
+    /* treating it as a block to make it move/animate */
+    display: inline-block;
+    /* transition takes 0.5s and uses an ease-in-out timing */
+    transition: 0.5s ease-in-out; 
+
+    /* animation: custom name | duration of one full cycle | timing function | iteration-count | delay */
+    animation: rotating 4s ease infinite 0s;
+}
+
+.h1-deco {
+    background: var(--pink);
+    font-weight: 250;
+    padding-inline: calc(0.7*var(--spacing));
+}
+
+.p-deco {
+    background: var(--dark-grey);
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: calc(1.4*var(--spacing));
+    padding-inline: calc(0.7*var(--spacing));
+    padding-block: calc(0.4*var(--spacing));
+    margin-block: calc(0.6*var(--spacing));
+}
+
+/* --- I learned this rotating animation from here https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes */
+/* we can name the @keyframe by anything */
+@keyframes rotating { 
+
+    /* start of animation cycle */
+	0% {
+        /* rotated 5 degrees clockwise (tilting to the right) */
+		transform: rotate(5deg);
+	}
+
+    /* halfway point of animation cycle */
+	50% {
+        /* rotated 5 degrees opposite of clockwise (tilting to the left) */
+		transform: rotate(-5deg); 
+	}
+
+    /* end point of animation cycle */
+	100% {
+		transform: rotate(5deg); 
+	}
+}
 
 .h2-wrap {
     border-bottom: var(--border) solid var(--black);
@@ -13,8 +68,7 @@
 h2 {
     background: var(--pink);
     padding-inline-start: 4%;
-    /* max-inline-size: calc(20*var(--spacing)); */
-    /* margin-block-start: initial; */
+
     /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
     clip-path: polygon(
         0% 0%,
@@ -23,15 +77,10 @@ h2 {
         0% 100%
     );
 
-    /* display: inline-block; */
-    /* position: relative; */
     border-bottom: initial;
     inline-size: initial;
     padding-inline-end: calc(2*var(--spacing));
     display: inline-block;
-
-    /* align-items: center;
-    position: relative; */
 }
 
 h2::before {
@@ -52,15 +101,33 @@ h2::before {
 .numbers {
     font-family: var(--pixel-font);
     font-size: calc(3.5*var(--spacing));
-    letter-spacing: calc(-0.2*var(--spacing));
+    letter-spacing: calc(-0.4*var(--spacing));
+    line-height: calc(2.2*var(--spacing));
 
     /* this line is for text stroke which I learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
     -webkit-text-stroke: calc(0.7*var(--border)) var(--black);
     color: var(--pink);
+
+    /* to treat every number as monospace due to different width of numbers */
+    display: block;
+    inline-size: calc(1*var(--spacing));
+    text-align: left;
+}
+
+.numbers:nth-last-child(-n+2) {
+    inline-size: calc(4.5*var(--spacing));
+}
+
+.manifesto {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: calc(1.6*var(--spacing));
+    margin-block-end: calc(1.8*var(--spacing));
+    gap: calc(0.6*var(--spacing));
 }
 
 .manifesto p{
-    padding-block-start: calc(3*var(--spacing));
+    padding-block-start: initial;
 }
 
 .folded-container::after {
@@ -75,4 +142,25 @@ h2::before {
     h2 {
         padding-inline-end: 8%;
     }
+
+    .manifesto-container {
+        margin-inline-start: 4%;
+        margin-inline-end: 8%;
+    }
+
+    .manifesto {
+        flex-direction: row;
+    }
+
+    .manifesto p {
+        padding-inline: 0;
+        margin-inline: 0;
+    }
+
+    .numbers {
+        text-align: right;
+        padding-inline: 0;
+        margin-inline: 0;
+    }
+
 }

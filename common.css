@@ -86,16 +86,6 @@ footer li:first-child {
 } */
 
 /* ------------- headings and body text -------------- */
-h1 {
-    font-family: var(--heading-font);
-    font-size: calc(2*var(--spacing));
-    font-weight: 550;
-    line-height: calc(2.5*var(--spacing));
-    /* display: inline-block; */
-    text-transform: uppercase;
-    padding-inline: 4%;
-}
-
 .h2-wrap {
     position: sticky;
     top: 0;
@@ -374,16 +364,6 @@ blockquote::after{
     background: var(--black);
 }
 
-.two-column {
-    display: flex;
-    flex-direction: column;
-}
-
-/* .two-column:nth-child(2) {
-    margin-inline: initial;
-    padding-inline: initial;
-} */
-
 
 /* 
 .rhombus {
@@ -542,5 +522,17 @@ blockquote::after{
     section {
         margin-inline: auto;
     }
-    
+
+    .two-column {
+        display: flex;
+        flex-direction: row;
+        margin-block-start: calc(1.4*var(--spacing));
+        /* gap: calc(1*var(--spacing)); */
+    }
+
+    .two-column p{
+        margin-inline: initial;
+        padding-inline: initial;
+        max-inline-size: 50ch;
+    }
 }
