@@ -204,7 +204,7 @@ blockquote::after{
     padding-inline: calc(0.2*var(--spacing));
 }
 
-.links {
+a {
     font-weight: 600;
     text-decoration: underline;
     text-decoration-style: solid;
@@ -369,6 +369,63 @@ blockquote::after{
     block-size: 1em;
     border: var(--border) solid var(--black);
     background: var(--black);
+}
+
+.sticky-group {
+    margin-inline-start: 12%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    margin-block: calc(2*var(--spacing));
+}
+
+.sticky-container {
+    padding-inline-end: calc(1.2*var(--spacing));
+    padding-inline-start: calc(1.2*var(--spacing));
+    border: var(--border) solid var(--black);
+
+    /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
+    clip-path: polygon(
+        0% 0%, /* top Left */
+        100% 0%, /* top right */
+        100% 100%, /* bottom right */
+        calc(0.8*var(--spacing)) 100%, /* bottom-left side, start of cut */
+        0% calc(100% - calc(0.8*var(--spacing)))  /* left side, end of cut */
+    );
+
+    padding-block: var(--spacing);
+    display: inline-block;
+    position: relative;
+    max-inline-size: 50ch;
+
+    /* the following lines are creating the grid background by combining the horizontal and vertical lines*/
+    background-image: 
+        /* it's the vertical lines to the right) */
+        /* linear-gradient(to right, var(--dark-grey) 1px, transparent 1px), */
+        /* it's the horizontal lines to the bottom) */
+        linear-gradient(to bottom, var(--dark-grey) 1px, transparent 1px);
+        
+    /*change the values to keep the cells smaller or bigger*/
+    background-size: calc(1.5*var(--spacing)) calc(1.5*var(--spacing));
+}
+
+
+.sticky-container::before {
+    content: '';
+    inline-size: calc(0.8*var(--spacing));
+    block-size: calc(0.8*var(--spacing));
+    background: var(--black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.sticky-container p{
+    margin-inline: initial;
+    padding: initial;
+    font-family: var(--heading-font);
+    line-height: calc(1.2*var(--spacing));
 }
 
 
@@ -541,5 +598,10 @@ blockquote::after{
         margin-inline: initial;
         padding-inline: initial;
         max-inline-size: 50ch;
+    }
+
+    .sticky-group {
+        margin-inline-start: 16%;
+        margin-block-start: calc(3*var(--spacing));
     }
 }

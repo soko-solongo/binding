@@ -8,6 +8,35 @@ h1 {
     padding-inline: 4%;
 }
 
+.h1-deco::before {
+    content: '';
+    inline-size: calc(3*var(--spacing));
+    block-size: calc(3*var(--spacing));
+    background: var(--green);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
+    clip-path: polygon(
+        0% 0%, /* top Left */
+        100% 0%, /* top right */
+        100% 100%, /* bottom right */
+        calc(0.5*var(--spacing)) 100%, /* bottom-left side, start of cut */
+        0% calc(100% - calc(0.5*var(--spacing)))  /* left side, end of cut */
+    );
+}
+
+.h1-deco::after {
+    content: '';
+    font-family: var(--heading-font);
+    inline-size: calc(0.5*var(--spacing));
+    block-size: calc(0.5*var(--spacing));
+    background: var(--black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 .h2-wrap {
     background: initial;
 }
