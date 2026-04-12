@@ -1,12 +1,18 @@
 /* ===== H2 OVERRIDE =====
    common.css makes h2 a sticky, bordered section header.
    The home page uses a simpler heading style. */
+.h2-wrap {
+    position: static;
+    top: auto;
+    z-index: auto;
+}
+
 h2 {
     font-family: var(--heading-font);
     font-weight: 400;
     text-transform: uppercase;
     font-size: calc(1.5*var(--spacing));
-    padding-inline: 4%;
+    padding-inline: 0;
     padding-block: calc(0.5*var(--spacing));
     border: none;
     position: static;
@@ -18,10 +24,16 @@ h2 {
 /* ===== HERO ===== */
 .home-hero {}
 
+.home-intro {
+    padding-block-start: calc(0.5*var(--spacing));
+    padding-block-end: calc(2*var(--spacing));
+    max-inline-size: none;
+}
+
 .home-hero-text {
-    padding-inline: 4%;
+    padding-inline: 12%;
     padding-block-start: calc(2*var(--spacing));
-    padding-block-end: calc(3*var(--spacing));
+    padding-block-end: calc(1.5*var(--spacing));
 }
 
 .home-eyebrow {
@@ -34,9 +46,9 @@ h2 {
 
 h1 {
     font-family: var(--body-font);
-    font-size: calc(1.8*var(--spacing));
+    font-size: calc(1.44*var(--spacing));
     font-weight: 900;
-    line-height: calc(2.2*var(--spacing));
+    line-height: calc(1.76*var(--spacing));
     text-transform: uppercase;
     padding-block-start: var(--spacing);
 }
@@ -46,9 +58,9 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: calc(1.5*var(--spacing));
-    margin-inline: 4%;
-    margin-block-start: calc(4*var(--spacing));
-    margin-block-end: calc(4*var(--spacing));
+    margin-inline: 12%;
+    margin-block-start: calc(2*var(--spacing));
+    margin-block-end: calc(2*var(--spacing));
 }
 
 .home-card {
@@ -58,14 +70,16 @@ h1 {
     color: var(--black);
     background: var(--dark-grey);
     box-shadow: 0.5em -0.5em 0 var(--black);
-    transition: box-shadow 0.15s;
+    transition: box-shadow 0.2s, transform 0.2s;
     position: relative;
     overflow: hidden;
 }
 
 .home-card:hover {
-    box-shadow: none;
+    transform: translate(-0.2em, 0.2em);
+    box-shadow: 0.7em -0.7em 0 var(--black);
     color: var(--black);
+    cursor: pointer;
 }
 
 /* web tab header */
@@ -96,6 +110,7 @@ h1 {
     font-weight: 700;
     text-transform: uppercase;
     line-height: calc(1.9*var(--spacing));
+    padding-block-start: calc(0.5*var(--spacing));
 }
 
 .home-card-byline {
@@ -104,7 +119,6 @@ h1 {
     font-size: calc(0.62*var(--spacing));
     text-transform: uppercase;
     opacity: 0.6;
-    padding-block-start: calc(0.5*var(--spacing));
 }
 
 .home-card-desc {
@@ -112,40 +126,128 @@ h1 {
     font-family: var(--body-font);
     font-size: calc(0.7*var(--spacing));
     line-height: calc(1.2*var(--spacing));
-    padding-block-start: calc(0.8*var(--spacing));
+    padding-block-start: calc(0.5*var(--spacing));
     max-inline-size: 45ch;
     opacity: 0.8;
 }
 
-/* ===== COLOPHON LIST ===== */
-.colophon-list {
-    margin-inline: 4%;
-    margin-block-start: calc(1.5*var(--spacing));
-    margin-block-end: calc(2*var(--spacing));
+/* ===== COLOPHON ===== */
+.colophon {
+    margin-block-start: calc(2*var(--spacing));
+    border-block-start: var(--border) solid var(--black);
+    padding-block-start: calc(2*var(--spacing));
+    margin-inline: 12%;
 }
 
-.colophon-list li {
-    border-top: var(--border) solid var(--black);
+.colophon > p {
+    padding-block-start: calc(0.2*var(--spacing));
+    max-inline-size: none;
+}
+
+.colophon-list {
+    margin-inline: 0;
+    margin-block-start: calc(1.5*var(--spacing));
+    margin-block-end: calc(2*var(--spacing));
+    display: flex;
+    flex-direction: column;
+    gap: calc(1*var(--spacing));
+}
+
+.colophon-link {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    text-decoration: none;
+    color: var(--black);
+    inline-size: 100%;
+}
+
+.colophon-link:hover {
+    color: var(--black);
+}
+
+.colophon-visit {
+    margin-inline: calc(1*var(--spacing));
+    margin-block: calc(0.5*var(--spacing));
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    padding-inline: calc(0.8*var(--spacing));
+    padding-block: calc(0.4*var(--spacing));
+    background: var(--black);
+    color: var(--light-grey);
+    font-family: var(--heading-font);
+    font-size: calc(0.6*var(--spacing));
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.colophon-item {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border: var(--border) solid var(--black);
+    box-shadow: 0.3em -0.3em 0 var(--black);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.colophon-item:hover {
+    transform: translate(-0.2em, 0.2em);
+    box-shadow: 0.5em -0.5em 0 var(--black);
+}
+
+.colophon-num {
+    font-family: var(--heading-font);
+    font-size: calc(1.2*var(--spacing));
+    font-weight: 700;
+    padding-inline: calc(0.8*var(--spacing));
+    padding-block: calc(0.6*var(--spacing));
+    border-inline-end: var(--border) solid var(--black);
+    display: flex;
+    align-items: center;
+    min-inline-size: calc(3*var(--spacing));
+}
+
+.colophon-item--futurist .colophon-num { background: var(--pink); }
+.colophon-item--smarthome .colophon-num { background: var(--green); }
+.colophon-item--goodroom .colophon-num { background: var(--orange); }
+
+.colophon-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.colophon-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(0.2*var(--spacing));
+    padding-inline: calc(1*var(--spacing));
     padding-block: calc(0.6*var(--spacing));
 }
 
-.colophon-list li:last-child {
-    border-bottom: var(--border) solid var(--black);
+.colophon-title {
+    font-family: var(--body-font);
+    font-size: calc(0.8*var(--spacing));
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
-.colophon-list li p {
+.colophon-author {
     font-family: var(--heading-font);
-    font-size: calc(0.7*var(--spacing));
+    font-size: calc(0.6*var(--spacing));
     text-transform: uppercase;
-    padding: 0;
-    max-inline-size: initial;
+    opacity: 0.6;
 }
+
 
 /* ===== RESPONSIVE ===== */
 @media(width>600px) {
     h1 {
-        font-size: calc(2.4*var(--spacing));
-        line-height: calc(2.7*var(--spacing));
+        font-size: calc(1.92*var(--spacing));
+        line-height: calc(2.16*var(--spacing));
     }
 }
 
@@ -162,30 +264,50 @@ h1 {
 
 @media(width>1000px) {
     h1 {
-        font-size: calc(3*var(--spacing));
-        line-height: calc(3.4*var(--spacing));
+        font-size: calc(2.4*var(--spacing));
+        line-height: calc(2.72*var(--spacing));
     }
 
-    /* align with p text: common.css gives p margin-inline: 8% + padding-inline: 4% = starts at 12% */
+    /* align with p text: common.css gives p margin-inline: 12% + padding-inline: 4% = starts at 12% */
     h2 {
-        margin-inline-start: 8%;
+        margin-inline-start: 12%;
     }
 
     .home-hero-text {
-        padding-inline: 8%;
-        padding-block-end: calc(4*var(--spacing));
+        padding-inline: 12%;
+        padding-block-end: calc(2*var(--spacing));
+    }
+
+    .home-intro {
+        max-inline-size: none;
     }
 
     .home-cards {
-        margin-inline: 8%;
+        margin-inline: 12%;
+    }
+
+    .colophon .h2-wrap,
+    .colophon h2 {
+        margin-inline-start: 0;
+    }
+
+    .colophon > p {
+        margin-inline: 0;
+        padding-inline: 0;
+        max-inline-size: none;
+    }
+
+    .colophon-content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .colophon-visit {
+        margin-inline-start: auto;
+        align-self: center;
     }
 
     .colophon-list {
-        margin-inline: 8%;
-    }
-
-    /* bring colophon text to the same 12% start as body paragraphs */
-    .colophon-list li p {
-        padding-inline-start: 4%;
+        margin-inline: 0;
     }
 }

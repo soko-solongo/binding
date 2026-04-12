@@ -53,7 +53,7 @@ footer {
 
 /* ------ setting the design styles of color, typeface, etc. ------ */
 nav, footer {
-    padding-inline: 4%;
+    padding-inline: var(--spacing);
     padding-block: var(--spacing);
     background: var(--black);
     text-transform: uppercase;
@@ -74,11 +74,8 @@ footer ol {
     flex-direction: column;
     gap: calc(4*(var(--spacing)));
     justify-content: space-between;
-}
-
-footer li:first-child {
     opacity: 70%;
-    text-align: right;
+    text-align: left;
 }
 
 /* .main-layout {
@@ -222,8 +219,7 @@ nav ol ol li:nth-child(2) a[aria-current="page"] { color: var(--green); }
 nav ol ol li:nth-child(3) a[aria-current="page"] { color: var(--orange); }
 
 nav a[aria-current="page"] {
-    text-decoration: underline;
-    text-underline-offset: 0.3em;
+    text-decoration: none;
 }
 
 .bolded-text{
@@ -494,15 +490,13 @@ nav a[aria-current="page"] {
     .main-layout {
         /* redefining the layout structure of content (previously set to be stacked burger) */
 
-        /* sidebar (nav + footer) takes 20% of the screen width, and rest of the content will fill up the space */
-        grid-template-columns: 20% 1fr;
+        /* sidebar (nav + footer) width is fixed, rest of the content fills up the space */
+        grid-template-columns: calc(10*var(--spacing)) 1fr;
 
-        /* nav row, content row, footer row */
-        grid-template-rows: auto 1fr auto;
+        /* nav fills remaining space, footer is auto height at the bottom */
+        grid-template-rows: 1fr auto;
 
-        /* footer goes below nav, but article must spans both rows */
         grid-template-areas:
-            "nav    content"
             "nav    content"
             "footer content";
         min-block-size: 100vh;
@@ -513,9 +507,10 @@ nav a[aria-current="page"] {
         grid-area: nav;
         position: sticky;
         top: 0;
-        min-block-size: 100vh;
-        padding-inline: 20%;
+        block-size: 100vh;
+        padding-inline: var(--spacing);
         padding-block: calc(2*var(--spacing));
+        text-align: center;
 
         /* setting the internal content of nav to be vertical stacking */
         /* display: flex; */
@@ -526,17 +521,17 @@ nav a[aria-current="page"] {
     /* article must positioned in the second column*/
     article {
         grid-area: content;
-
-        /* make article span the entire height (nav row and its own row) */
-        grid-row: nav / span 2;
     }
 
     /* footer must positioned in the first column, but bottom row*/
     footer {
         grid-area: footer;
-        padding-inline: 20%;
+        padding-inline: var(--spacing);
         padding-block: calc(2*var(--spacing));
         font-size: calc(0.8*var(--spacing));
+        text-align: left;
+        position: sticky;
+        bottom: 0;
     }
 
     nav ol {
@@ -552,11 +547,6 @@ nav a[aria-current="page"] {
 
     footer ol {
         gap: calc(1*(var(--spacing)));
-    }
-
-    footer li:first-child {
-        opacity: 70%;
-        text-align: left;
     }
 
     /* ----- changing the specifics of heading, p, and classes ----- */
