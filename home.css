@@ -1,103 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Silkscreen:wght@400;700&display=swap');
-
-:root{
-    --spacing: 1.5rem;
-    --heading-font: "Chivo Mono", monospace;
-    --body-font: "DM Sans", sans-serif;
-    --pixel-font: "Silkscreen", sans-serif;
-
-    --black: #2D2D2D;
-    --green: #76EAD3;
-    --pink: #D6ABFF;
-    --orange: #FFAB73;
-    --light-grey: #EEF2F6;
-    --dark-grey: #d7dce2;
-    --tab-color: #D1D7DD;
-
-    background: var(--light-grey);
-    color: var(--black);
-    --border: 0.08rem;
-}
-
-html{scroll-behavior: smooth;}
-
-
-/* ----- setting the main layout into grid structure ----- */
-.main-layout {
-    /* mobile default structure is stacked vertically like burger */
-    display: grid;
-    grid-template-columns: 1fr;
-    /* naming the areas to access later in the desktop breakpoint */
-    grid-template-areas:
-        "nav"
-        "article"
-        "footer";
-    min-height: 100vh;
-}
-
-nav {
-    grid-area: nav;
-    position: static;
-    min-height: initial;
-    display: block;
-}
-
-article {
-    grid-area: article;
-}
-
-footer {
-    grid-area: footer;
-}
-
-
-/* ------ setting the design styles of color, typeface, etc. ------ */
-nav, footer {
-    padding-inline: 4%;
-    padding-block: var(--spacing);
-    background: var(--black);
-    text-transform: uppercase;
-    color: var(--light-grey);
+/* ===== H2 OVERRIDE =====
+   common.css makes h2 a sticky, bordered section header.
+   The home page uses a simpler heading style. */
+h2 {
     font-family: var(--heading-font);
-    font-size: calc(1*var(--spacing));
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: calc(1.5*var(--spacing));
+    padding-inline: 4%;
+    padding-block: calc(0.5*var(--spacing));
+    border: none;
+    position: static;
+    top: auto;
+    z-index: auto;
+    inline-size: initial;
 }
 
-nav ol {
-    display: flex;
-    flex-direction: row;
-    gap: calc(2*(var(--spacing)));
-    justify-content: space-between;
+/* ===== HERO ===== */
+.home-hero {}
+
+.home-hero-text {
+    padding-inline: 4%;
+    padding-block-start: calc(2*var(--spacing));
+    padding-block-end: calc(3*var(--spacing));
 }
 
-footer ol {
-    display: flex;
-    flex-direction: column;
-    gap: calc(4*(var(--spacing)));
-    justify-content: space-between;
-}
-
-footer li:first-child {
-    opacity: 70%;
-    text-align: right;
-}
-
-.styled-image {
-    filter: grayscale();
-    block-size: 50%;
-    align-items: center;
-    top: 0;
-}
-
-img {
-    block-size: calc(12*var(--spacing));
-    inline-size: 100%;
-    overflow: hidden;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    margin: var(--spacing);
+.home-eyebrow {
+    display: block;
+    font-family: var(--heading-font);
+    font-size: calc(0.6*var(--spacing));
+    text-transform: uppercase;
+    opacity: 0.5;
 }
 
 h1 {
@@ -106,193 +38,154 @@ h1 {
     font-weight: 900;
     line-height: calc(2.2*var(--spacing));
     text-transform: uppercase;
-    padding-block-end: var(--spacing);
     padding-block-start: var(--spacing);
-
 }
 
-.bolded-text {
-    text-transform: uppercase;
-    font-family: var(--heading-font);
-    padding-block-start: calc(2.8*var(--spacing));
-    padding-block-end: calc(1.4*var(--spacing));
-    max-inline-size: 60ch;
-    margin-inline: 8%;
-}
-
-h2 {
-    text-transform: uppercase;
-    font-family: var(--heading-font);
-    padding-block-start: calc(2.8*var(--spacing));
-    max-inline-size: 60ch;
-    margin-inline: 4%;
-    font-size: calc(1.5*var(--spacing));
-}
-
-p {
-    font-family: var(--body-font);
-    font-size: calc(0.75*var(--spacing));
-    line-height: calc(1.4*var(--spacing));
-    padding-inline: 4%;
-    padding-block-start: calc(1.4*var(--spacing));
-    max-inline-size: 70ch;
-}
-
-footer {
-    margin-block-start: calc(4*var(--spacing));
-}
-
-.footer-svg-line {
-    display: block;
-    width: 90%;
-    height: 10px;
-    margin: 0 auto calc(1.5 * var(--spacing)) auto; 
-    overflow: visible;
-}
-
-.svg-footer-stroke {
-    fill: var(--light-grey); 
-    stroke: none;
-}
-
-.window-container {
-    background: var(--dark-grey);
-    border: var(--border) solid var(--black);
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    margin-inline: 4%;
-    margin-block: calc(2*var(--spacing));
-    box-shadow: 0.6em -0.6em 0 var(--black);
-}
-
-.window-container ol {
+/* ===== ARTICLE CARDS (TABLE OF CONTENTS) ===== */
+.home-cards {
     display: flex;
     flex-direction: column;
-    gap: calc(3*var(--spacing));
+    gap: calc(1.5*var(--spacing));
+    margin-inline: 4%;
+    margin-block-start: calc(4*var(--spacing));
+    margin-block-end: calc(4*var(--spacing));
+}
+
+.home-card {
+    display: block;
+    border: var(--border) solid var(--black);
+    text-decoration: none;
+    color: var(--black);
     background: var(--dark-grey);
-    padding-inline: 6%;
-    padding-block: calc(2*var(--spacing));
-}
-
-.window-container p {
-    margin: initial;
-    padding-block: initial;
-}
-
-
-/* -------- styling for first box --------- */
-.one {
-    font-family: var(--heading-font);
-    font-size: calc(2.2*var(--spacing));
-    font-weight: 550;
-    line-height: calc(2.5*var(--spacing));
-    text-transform: uppercase;
-    letter-spacing: calc(-0.1*var(--spacing));
-}
-
-.pixel-font{
-    font-family: var(--pixel-font);
-    font-size: calc(2*var(--spacing));
-    font-weight: 500;
-}
-
-.decos {
-    display: flex;
-    flex-direction: row;
-    gap: calc(1*var(--spacing));
+    box-shadow: 0.5em -0.5em 0 var(--black);
+    transition: box-shadow 0.15s;
+    position: relative;
     overflow: hidden;
-    position: relative;
 }
 
-.one-deco-1,
-.one-deco-2,
-.one-deco-3 {
-    display: block;
-    inline-size: calc(3*var(--spacing));
-    block-size: calc(3*var(--spacing));
-    background: var(--green);
-    border: var(--border) solid var(--black);
-    position: relative;
-
-    /* my fancy cut-out corner learned from professors Rijk and Michael on slack*/
-    clip-path: polygon(
-        0% 0%, /* top Left */
-        100% 0%, /* top right */
-        100% 100%, /* bottom right */
-        calc(0.5*var(--spacing)) 100%, /* bottom-left side, start of cut */
-        0% calc(100% - calc(0.5*var(--spacing)))  /* left side, end of cut */
-    );
-
-    margin-block: var(--spacing);
+.home-card:hover {
+    box-shadow: none;
+    color: var(--black);
 }
 
-.one-deco-1::before,
-.one-deco-2::before,
-.one-deco-3::before {
-    content: '';
+/* web tab header */
+.home-card-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: calc(1.5*var(--spacing));
+    padding-block: calc(0.5*var(--spacing));
     font-family: var(--heading-font);
-    inline-size: calc(0.5*var(--spacing));
-    block-size: calc(0.5*var(--spacing));
-    background: var(--black);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-/* -------- styling for second box --------- */
-.second {
-    font-family: var(--body-font);
-    font-size: calc(2.3*var(--spacing));
-    font-weight: 700;
-    letter-spacing: calc(0.14*var(--spacing));
-    line-height: calc(3*var(--spacing));
+    font-size: calc(0.65*var(--spacing));
     text-transform: uppercase;
+    border-bottom: var(--border) solid var(--black);
 }
 
-.second-deco {
-    border: var(--border) solid var(--black);
+.home-card--futurist .home-card-tab { background: var(--pink); }
+.home-card--smarthome .home-card-tab { background: var(--green); }
+.home-card--goodroom .home-card-tab { background: var(--orange); }
 
-    /* --- I learned this rotating animation from here https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes */
-    
-    /* treating it as a block to make it move/animate */
-    display: inline-block;
-    /* transition takes 0.5s and uses an ease-in-out timing */
-    transition: 0.5s ease-in-out; 
-
-    /* animation: custom name | duration of one full cycle | timing function | iteration-count | delay */
-    animation: rotating 4s ease infinite 0s;
+.home-card-inner {
+    padding-inline: calc(1.5*var(--spacing));
+    padding-block: calc(1.5*var(--spacing));
 }
 
-.second-deco {
-    background: var(--pink);
-    font-weight: 250;
-    padding-inline: calc(0.7*var(--spacing));
-}
-
-/* -------- styling for third box --------- */
-.third {
+.home-card-title {
     font-family: var(--body-font);
-    font-size: calc(2.3*var(--spacing));
+    font-size: calc(1.5*var(--spacing));
     font-weight: 700;
-    line-height: calc(2.8*var(--spacing));
     text-transform: uppercase;
-    padding-inline-start: calc(4*var(--spacing));
+    line-height: calc(1.9*var(--spacing));
 }
 
-.stretching-box {
-    position: relative;
-}
-
-.third-deco {
+.home-card-byline {
     display: block;
-    inline-size: calc(3*var(--spacing));
-    block-size: calc(7.3*var(--spacing));
-    background: var(--green);
-    border: var(--border) solid var(--black);
-    position: absolute;
-    background: var(--orange);
-    border: var(--border) solid var(--black);
-    top: 0.6em;
-    left: 60%;
+    font-family: var(--heading-font);
+    font-size: calc(0.62*var(--spacing));
+    text-transform: uppercase;
+    opacity: 0.6;
+    padding-block-start: calc(0.5*var(--spacing));
+}
+
+.home-card-desc {
+    display: block;
+    font-family: var(--body-font);
+    font-size: calc(0.7*var(--spacing));
+    line-height: calc(1.2*var(--spacing));
+    padding-block-start: calc(0.8*var(--spacing));
+    max-inline-size: 45ch;
+    opacity: 0.8;
+}
+
+/* ===== COLOPHON LIST ===== */
+.colophon-list {
+    margin-inline: 4%;
+    margin-block-start: calc(1.5*var(--spacing));
+    margin-block-end: calc(2*var(--spacing));
+}
+
+.colophon-list li {
+    border-top: var(--border) solid var(--black);
+    padding-block: calc(0.6*var(--spacing));
+}
+
+.colophon-list li:last-child {
+    border-bottom: var(--border) solid var(--black);
+}
+
+.colophon-list li p {
+    font-family: var(--heading-font);
+    font-size: calc(0.7*var(--spacing));
+    text-transform: uppercase;
+    padding: 0;
+    max-inline-size: initial;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(width>600px) {
+    h1 {
+        font-size: calc(2.4*var(--spacing));
+        line-height: calc(2.7*var(--spacing));
+    }
+}
+
+@media(width>800px) {
+    .home-cards {
+        flex-direction: row;
+    }
+
+    .home-card {
+        flex: 1;
+    }
+
+}
+
+@media(width>1000px) {
+    h1 {
+        font-size: calc(3*var(--spacing));
+        line-height: calc(3.4*var(--spacing));
+    }
+
+    /* align with p text: common.css gives p margin-inline: 8% + padding-inline: 4% = starts at 12% */
+    h2 {
+        margin-inline-start: 8%;
+    }
+
+    .home-hero-text {
+        padding-inline: 8%;
+        padding-block-end: calc(4*var(--spacing));
+    }
+
+    .home-cards {
+        margin-inline: 8%;
+    }
+
+    .colophon-list {
+        margin-inline: 8%;
+    }
+
+    /* bring colophon text to the same 12% start as body paragraphs */
+    .colophon-list li p {
+        padding-inline-start: 4%;
+    }
 }

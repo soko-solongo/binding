@@ -208,7 +208,22 @@ a {
 
 
 a:hover {
-    color: var(--pink)
+    color: var(--pink);
+}
+
+/* per-page hover colors for the numbered nav links */
+nav ol ol li:nth-child(1) a:hover { color: var(--pink); }
+nav ol ol li:nth-child(2) a:hover { color: var(--green); }
+nav ol ol li:nth-child(3) a:hover { color: var(--orange); }
+
+/* active page: same color as hover, plus underline */
+nav ol ol li:nth-child(1) a[aria-current="page"] { color: var(--pink); }
+nav ol ol li:nth-child(2) a[aria-current="page"] { color: var(--green); }
+nav ol ol li:nth-child(3) a[aria-current="page"] { color: var(--orange); }
+
+nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
 }
 
 .bolded-text{
@@ -529,6 +544,10 @@ a:hover {
         position: sticky;
         top: calc(2*var(--spacing));
         /* gap: calc(3*(var(--spacing))); */
+    }
+
+    nav ol ol li a::before {
+        content: "Article\00a0";
     }
 
     footer ol {
