@@ -385,6 +385,7 @@ nav a[aria-current="page"] {
 
 .sticky-group {
     margin-inline-start: 12%;
+    padding-inline-end: var(--spacing);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -588,6 +589,7 @@ nav a[aria-current="page"] {
 
     .sticky-group {
         margin-inline-start: 16%;
+        padding-inline-end: var(--spacing);
         margin-block-start: calc(3*var(--spacing));
     }
 

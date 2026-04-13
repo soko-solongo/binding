@@ -190,7 +190,6 @@ h2::before {
 
     .selected-container {
         margin-inline-start: 20%;
-        inline-size: 1fr;
     }
 }
 

@@ -65,6 +65,7 @@ h1 {
 
 .home-card {
     display: block;
+    min-inline-size: calc(7.3*var(--spacing));
     border: var(--border) solid var(--black);
     text-decoration: none;
     color: var(--black);
@@ -244,6 +245,23 @@ h1 {
 
 
 /* ===== RESPONSIVE ===== */
+
+/* colophon-visit ("View Original Link →") overflows on very narrow screens
+   because white-space: nowrap prevents wrapping. Reduce margins and font
+   so the button fits within the colophon-content column. */
+@media(width < 480px) {
+    .colophon {
+        margin-inline: 4%;
+    }
+
+    .colophon-visit {
+        font-size: calc(0.5*var(--spacing));
+        margin-inline: calc(0.4*var(--spacing));
+        padding-inline: calc(0.4*var(--spacing));
+        padding-block: calc(0.3*var(--spacing));
+    }
+}
+
 @media(width>600px) {
     h1 {
         font-size: calc(1.92*var(--spacing));
